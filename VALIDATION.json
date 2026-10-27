@@ -22,5 +22,17 @@
     "cover_heading": "MIT",
     "scientific_content_unchanged": true,
     "rendered_pages_reviewed": 25
+  },
+  "explanation_notebook": {
+    "path": "explaination.ipynb",
+    "original_cells_explained": 21,
+    "original_code_cells_reproduced_verbatim": 10,
+    "extra_demonstrations": 4,
+    "executed_code_cells": 14,
+    "error_outputs": 0,
+    "source_cell_mapping": "passed",
+    "source_notebook_sha256": "e05703e133a6743b33ae0a36c208ee7b1a3b81106c33535ad63967b09266e100",
+    "sha256": "ee69e484aeef8cb3ed348570ec71806b8b8db3059f2e04cc8793636c70216c2f",
+    "status": "passed"
   }
 }

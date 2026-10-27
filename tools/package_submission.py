@@ -19,7 +19,7 @@ def package():
     if target.exists():
         raise FileExistsError(f"Submission target already exists: {target}")
     target.mkdir()
-    files = ["Project_Report.pdf", "Project_Report.md", "SNA_Project_with_Results.ipynb", "README.md",
+    files = ["Project_Report.pdf", "Project_Report.md", "SNA_Project_with_Results.ipynb", "explaination.ipynb", "README.md",
              "TEAM_DETAILS.json", "requirements-lock.txt", "pyproject.toml", "VALIDATION.json"]
     for name in files:
         shutil.copy2(ROOT / name, target / name)
@@ -41,6 +41,7 @@ def package():
     # Re-execute from the copied folder; the notebook explicitly imports this
     # folder's src package, so it cannot rely on an editable original checkout.
     for command in [[sys.executable, "tools/build_notebook.py"],
+                    [sys.executable, "tools/build_explanation.py"],
                     [sys.executable, "-m", "pytest", "-q", "-p", "no:cacheprovider"],
                     [sys.executable, "tools/validate_artifacts.py"]]:
         result = subprocess.run(command, cwd=target, env=env, text=True, encoding="utf-8", capture_output=True)

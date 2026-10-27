@@ -1,6 +1,6 @@
 # SNA project - completed implementation and submission
 
-[Project report](Project_Report.pdf) | [Executed notebook](SNA_Project_with_Results.ipynb) | [Download complete project ZIP](https://github.com/aditya9515/SNA/archive/refs/heads/main.zip)
+[Project report](Project_Report.pdf) | [Executed notebook](SNA_Project_with_Results.ipynb) | [Cell-by-cell explanation](explaination.ipynb) | [Download complete project ZIP](https://github.com/aditya9515/SNA/archive/refs/heads/main.zip)
 
 **Stability-Aware Structural Weighting for Fast Label Propagation in Social Networks**  
 DSE 4403 - Social Network Analysis | 26 October 2026
@@ -18,6 +18,7 @@ DSE 4403 - Social Network Analysis | 26 October 2026
 - `Project_Report.pdf` - final report with the abstract, introduction, ten-paper review, design, experiments, measured results, limitations and references.
 - `Project_Report.md` - editable report source.
 - `SNA_Project_with_Results.ipynb` - executed notebook with live examples, result tables, embedded figures and independent metric checks.
+- `explaination.ipynb` - executed teaching companion: project overview, research versus contribution, all 21 original cells explained, imports/data paths and four extra demonstrations.
 - `src/sna_project/`, `configs/`, `tests/`, `tools/` - full implementation and reproduction tools.
 - `data/` - source archives, prepared graphs, node maps and separate labels.
 - `results/` - development selection, final assignments/records, effective configurations, environments and summaries.
@@ -75,6 +76,7 @@ Choose the SNA Project kernel. Running all cells audits bundled results and runs
 
 ```powershell
 .\.venv\Scripts\python.exe tools/build_notebook.py
+.\.venv\Scripts\python.exe tools/build_explanation.py
 ```
 
 ## Reproduce all experiments separately
