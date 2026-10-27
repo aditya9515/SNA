@@ -1,0 +1,27 @@
+{
+  "dataset_id": "football",
+  "source_url": "https://websites.umich.edu/~mejn/netdata/football.zip",
+  "graph_hash": "4b669560285c7fc8dac46554d761bd4f5ed035768d8db97887f0b81d8053f639",
+  "nodes": 115,
+  "edges": 613,
+  "source_nodes": 115,
+  "source_edges": 613,
+  "source_directed": false,
+  "source_self_loops_removed": 0,
+  "connected_components": 1,
+  "isolates": 0,
+  "density": 0.0935163996948894,
+  "mean_degree": 10.660869565217391,
+  "max_degree": 12,
+  "reference_groups": 12,
+  "label_coverage": 1.0,
+  "policy": "Undirected OR-symmetrisation; deduplicate; remove loops; retain every source node; discard source weights for common topology",
+  "raw_sha256": {
+    "football.gml": "48bc58e19bf674cc9064e60fe7128f0b95a908e684fed575178f1388ac34e949",
+    "football.txt": "5b98e293ed499ac6af372782d13dbb29ac0e3ed9567ea6aec26895907c51653e",
+    "football.zip": "147081ba047c919782896b26852f812e65880a9e52f69070069f950eea90c396"
+  },
+  "prepared_utc": "2026-10-26T14:36:00.119597+00:00",
+  "reference_label_source": "Original football.gml value attribute (conference)",
+  "version_note": "Measured source version; 613 edges in this Newman archive, not the 616 reported in the FLPA paper"
+}

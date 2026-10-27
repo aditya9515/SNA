@@ -1,0 +1,12 @@
+{
+  "course": "DSE 4403 - Social Network Analysis",
+  "project_title": "Stability-Aware Structural Weighting for Fast Label Propagation in Social Networks",
+  "base_paper": "Large network community detection by fast label propagation",
+  "members": [
+    {"name": "Aditya Kosuru", "registration_number": "230968316"},
+    {"name": "Jaswanth P", "registration_number": "230968014"},
+    {"name": "Prithvi Ram Perivela", "registration_number": "230968304"}
+  ],
+  "designated_uploader": "Aditya Kosuru",
+  "submission_instruction": "One member uploads one folder containing the project report and source code, including an executed .ipynb with results."
+}

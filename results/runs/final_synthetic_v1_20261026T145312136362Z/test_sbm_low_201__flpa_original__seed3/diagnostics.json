@@ -1,0 +1,7 @@
+{
+  "remaining_queue": 0,
+  "queue_policy": "original_filtered",
+  "weight_attribute": null,
+  "retain_maximal": false,
+  "support_violation_nodes": []
+}

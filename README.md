@@ -1,5 +1,7 @@
 # SNA project - completed implementation and submission
 
+[Project report](Project_Report.pdf) | [Executed notebook](SNA_Project_with_Results.ipynb) | [Download complete project ZIP](https://github.com/aditya9515/SNA/archive/refs/heads/main.zip)
+
 **Stability-Aware Structural Weighting for Fast Label Propagation in Social Networks**  
 DSE 4403 - Social Network Analysis | 26 October 2026
 

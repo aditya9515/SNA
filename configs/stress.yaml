@@ -1,0 +1,6 @@
+experiment_id: final_synthetic_v1
+role: test
+datasets: [test_sbm_low_200, test_sbm_low_201, test_sbm_low_202, test_sbm_medium_200, test_sbm_medium_201, test_sbm_medium_202, test_sbm_high_200, test_sbm_high_201, test_sbm_high_202]
+methods: [flpa_original, c00_unit_random, c10_weighted_random, c01_unit_retain, c11_weighted_retain, asyn_lpa, leiden_modularity, nx_weighted_flpa]
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+schedule_seed: 2718

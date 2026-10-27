@@ -1,0 +1,997 @@
+--- PDF PAGE 1 ---
+GATFELPA integrates graph 
+attention networks and enhanced 
+label propagation for robust 
+community detection
+Feiyi Tang1, Junxian Li1,2, Xi Liu1,2, Chao Chang1,2 & Luyao Teng1
+Community detection in graph networks is a fundamental yet challenging task due to limitations in 
+existing methods. Traditional Graph Convolutional Network (GCN)–based models often suffer from 
+over-smoothing, which results in indistinguishable node representations after excessive aggregation. 
+Additionally, many models face computational inefficiency, restricting their scalability on large-scale 
+networks. To address these challenges, we propose GATFELPA, a hybrid community detection model 
+that combines a Graph Attention Network (GAT) with an enhanced label propagation algorithm 
+(DPCELPA). GATFELPA employs an adaptive strategy to dynamically determine the optimal number of 
+aggregation layers, effectively mitigating over-smoothing by balancing intra-community compactness 
+and inter-community separability. A novel similarity preservation module further enhances the model’s 
+ability to differentiate communities by retaining local and global dissimilarities in heterogeneous 
+networks. Comparative experiments on four real-world datasets, including large-scale networks 
+like ogbn-arxiv, demonstrate that GATFELPA achieves superior performance across most metrics, 
+particularly excelling in accuracy, robustness, and scalability. These results highlight GATFELPA as a 
+promising approach for addressing complex community detection tasks.
+Keywords Community detection, Graph attention network (GAT), Density peak clustering, Label 
+propagation algorithm (LPA)
+With the rapid advancement of deep learning technologies, many researchers have explored graph clustering 
+methods attributed to community detection 1. Although these methods effectively classify nodes within 
+attributed graphs, they often overlook the structural properties of communities, particularly the principle of 
+” dense connections within communities and sparse connections between them”2.
+Recent methods based on Graph Convolutional Networks (GCNs) have achieved notable performance 
+improvements, but still face inherent challenges 3. A significant limitation is the increased computational load 
+caused by complex convolution operations and nonlinear activation functions, particularly on large datasets. 
+Moreover, shallow GCNs struggle to capture long-range dependencies due to their limited propagation range, 
+while deep GCNs risk over-smoothing, which makes node representations indistinguishable. The scarcity of 
+labeled data in real-world networks further exacerbates these issues, as GCNs often require extensive labeled 
+data for effective training4.
+To address these challenges, various solutions have been proposed. Wu et al. introduced the Simplified Graph 
+Convolution Network (SGC) to eliminate resource-intensive non-linearity between GCN layers 5. However, 
+SGC inherits GCN’s inability to emphasize the importance of certain neighboring nodes. Zhang et al. utilized 
+community distance metrics to determine aggregation layers without additional parameters, but their method 
+overlooks the importance of inter-community distances for smoothness evaluation 6. Meanwhile, Chen et al. 
+proposed MAD and MADGap to measure over-smoothness but introduced new parameters in the process7.
+Both Label Propagation Algorithms (LPA) and GCN-based methods are message-passing algorithms that 
+can solve community detection tasks. While LPA propagates node labels through the edges, GCNs propagate and 
+transform node features8. Efforts to integrate these two approaches have shown potential to improve community 
+detection, but require further optimization.
+In response to these challenges, this paper proposes GATFELPA, a novel hybrid model that integrates the 
+DPCELPA9 algorithm, previously introduced in our work, with a linear Graph Attention Network (GAT). 
+1School of Information Engineering, Guangzhou Panyu Polytechnic, Guangzhou 511483, China. 2Junxian Li, Xi Liu, 
+and Chao Chang contributed equally to this work. email: luna.teng@qq.com
+OPEN
+Scientific Reports |         (2025) 15:3952 1| https://doi.org/10.1038/s41598-024-84962-4
+www.nature.com/scientificreports
+
+
+--- PDF PAGE 2 ---
+GATFELPA is composed of three core components: a GAT module, a similarity preservation module, and the 
+enhanced label propagation mechanism, DPCELPA. Although many existing community detection models, 
+such as DDGAE, achieve high accuracy, their computational intensity limits the scalability on large-scale 
+networks. This paper addresses these limitations by focusing on the computational efficiency of GATFELPA, 
+with a detailed complexity analysis and comparisons against baseline models such as GAE, VGAE, DDGAE, and 
+GCN-based models. The findings highlight the superior trade-off between computational cost and performance, 
+particularly for large-scale datasets.
+In the GAT module, the Jaccard index is incorporated creatively into the attention mechanism, eliminating 
+the need to learn additional attention parameters while implicitly capturing the local structural relationships 
+within the graph4. Furthermore, the linear GAT, based on SGC, is employed to differentiate nodes of varying 
+importance effectively. To enhance model adaptability, DPCELPA is utilized to dynamically determine the 
+optimal number of aggregation layers by evaluating intra-community and inter-community distances, ensuring 
+the model achieves optimal aggregation while mitigating over-smoothing. Complementing this, the similarity 
+preservation module ensures that the smoothed features retain local similarity while maintaining global 
+dissimilarity, capturing the structural distinctions necessary for effective community detection. The final step 
+applies DPCELPA to the smoothed features, yielding highly accurate and stable community assignments.
+To validate the proposed model, this study conducts comprehensive experiments on four benchmark datasets: 
+Cora, CiteSeer, PubMed, and ogbn-arxiv, alongside 20 other algorithms. The experimental results demonstrate 
+that GATFELPA consistently outperforms competing methods in terms of accuracy, Normalized Mutual 
+Information (NMI), Adjusted Rand Index (ARI), and F1-score across various network sizes and complexities. 
+Ablation studies confirm the importance of each module, parameter analyses underline the model’s robustness 
+across diverse scenarios, and computational complexity comparison demonstrates the efficiency of GATFELPA ’s 
+hybrid mechanism.
+The main contributions of this paper are summarized as follows:
+• Fusion of GAT and DPCELP A: The GATFELPA model integrates the attention mechanism of GAT with the 
+label propagation strategy of DPCELPA, leveraging both local node similarities and global network structures 
+for effective community detection.
+• Adaptive Aggregation Strategy: An adaptive strategy is introduced to dynamically determine the optimal 
+number of aggregation layers by evaluating intra-community and inter-community distances. This reduces 
+over-smoothing while improving clustering performance and computational efficiency.
+• Similarity Preservation Module: This module ensures that smoothed features retain local similarity while 
+maintaining global distinctiveness, enabling the model to capture essential structural characteristics critical 
+for accurate and robust community detection.
+• Extensive Experimental Validation:  GATFELPA is evaluated on four real-world datasets-Cora, CiteSeer, 
+PubMed, and ogbn-arxiv-through comparative experiments, ablation studies, parameter analyses, and com-
+putational complexity comparison. The results consistently demonstrate that GATFELPA achieves superior 
+performance across diverse metrics and datasets.
+• Computational Efficiency:  A thorough computational complexity analysis reveals that GATFELPA offers 
+a favorable balance between accuracy and scalability, making it particularly suitable for large-scale datasets, 
+where traditional models like DDGAE struggle.The remainder of this paper is organized as follows: Section 
+2 reviews related work, summarizing traditional methods and recent advancements in community detection. 
+Section 3 details the GATFELPA model, describing its components and algorithmic framework. Section 4 
+presents a comprehensive experimental evaluation, demonstrating the model’s performance and robustness 
+across various settings. Finally, Sect. 5 concludes the paper with a discussion of potential future research 
+directions.
+Related work
+Community detection has been a focal point of research, with numerous approaches proposed over the years. 
+Traditional methods include modularity-based algorithms, such as those introduced by Newman and Girvan 
+in 2004 10, which optimize modularity scores to identify community structures. Similarly, spectral clustering 
+methods decompose the graph’s adjacency matrix to uncover latent community structures11. While foundational, 
+these methods often face limitations in scalability and the integration of node attributes, which are critical for 
+modern network analysis.
+Label Propagation Algorithms (LPAs)8 offer a computationally efficient alternative by iteratively propagating 
+node labels through the graph edges. LPAs are particularly suitable for large-scale networks due to their simplicity 
+and scalability. However, their reliance on random initialization of labels and non-deterministic update orders 
+often leads to instability and reduced accuracy. To address these limitations, Adaptive Label Propagation 
+(ALP)12 introduces a mechanism to assign adaptive weights to neighbors, which enhances the detection of 
+overlapping communities in heterogeneous networks. Although ALP demonstrates improved performance in 
+specific scenarios, it incurs higher computational costs and relies on carefully tuned parameters, which limit its 
+generalizability across diverse datasets.
+The advent of deep learning has transformed community detection, particularly with the development of 
+Graph Convolutional Networks (GCNs). GCNs aggregate features from neighboring nodes through convolution 
+operations, integrating both network topology and node attributes13. Despite their success, GCNs face challenges 
+such as over-smoothing, where excessive aggregation renders node features indistinguishable. To address 
+this, Wu et al. proposed Simplified Graph Convolutional Networks (SGCs) 5, which eliminate non-linearities 
+to streamline the model while retaining performance. Building on the limitations of GCNs, GraphSAGE 14 
+introduces a sampling-based aggregation mechanism, which selects a fixed number of neighbors for feature 
+Scientific Reports |         (2025) 15:3952 2| https://doi.org/10.1038/s41598-024-84962-4
+www.nature.com/scientificreports/
+
+--- PDF PAGE 3 ---
+aggregation. This approach improves scalability for large-scale graphs and enables generalization to unseen 
+nodes, making it particularly suitable for dynamic networks. However, its reliance on sampling can lead to the 
+omission of important structural information in certain cases.
+In parallel, Velickovic et al. introduced Graph Attention Networks (GATs)15, which assign varying importance 
+to neighboring nodes through attention mechanisms, enhancing the model’s ability to capture salient features. 
+Building on this foundation, Overlapping Community Detection using GATs (AOCD) 16 integrates attention 
+mechanisms into the Neural Overlapping Community Detection (NOCD) framework, achieving notable 
+improvements in overlapping community detection. However, AOCD is limited in its robustness when applied 
+to non-overlapping or hybrid approaches that combine attention mechanisms with label propagation. GATv217 
+further refines the attention mechanism by introducing a dynamic attention weight computation, which models 
+the relationships between nodes as a learnable function of edge features. This approach improves the ability to 
+capture asymmetric relationships but introduces additional computational overhead in large-scale networks.
+Efforts to combine GCNs with LPAs have shown promise. Approximate Personalized Propagation of 
+Neural Predictions (APPNP)18 separates neural network predictions from information propagation, leveraging 
+Personalized PageRank to enhance label propagation. This method effectively mitigates over-smoothing by 
+balancing the influence of local and global neighbors through a damping factor. Expanding on this, Semi-
+Supervised Label Propagation 19 incorporates labeled data to guide community detection within a GNN 
+framework, outperforming unsupervised methods. However, its reliance on labeled data restricts its applicability 
+in scenarios with limited annotations.
+The challenge of over-smoothing has also driven the development of advanced architectures capable of deeper 
+representations. GCNII20 addresses this problem by incorporating identity mapping and residual connections 
+to preserve feature distinctiveness across layers. It also introduces layer-wise weight adjustment, which balances 
+feature reuse and new information aggregation, allowing the model to achieve high performance in complex 
+graphs. Despite these advancements, GCNII’s fixed-depth design may limit its adaptability to networks with 
+diverse structural properties.
+Recent advancements have addressed these challenges through novel architectures. For example, Dwivedi 
+and Bresson generalized transformer networks to graph data, demonstrating improved performance in capturing 
+complex node dependencies 21. Liu et al. categorized deep learning approaches for community detection 
+into three streams: deep neural networks, deep graph embedding, and graph neural networks, identifying 
+key challenges and future research directions 22. Furthermore, Su et al. provided a comprehensive survey on 
+community detection using deep learning, evaluating the effectiveness of various models in handling complex 
+network structures 23. Beyond Homophily 24 reconstructs graph structures into homophilic and heterophilic 
+components, enabling dual clustering networks to extract both low- and high-frequency information. While 
+effective for graphs with diverse homophily levels, this approach introduces significant computational overhead 
+due to explicit graph reconstruction. Similarly, CDC 25 employs adaptive anchor selection and graph filtering, 
+achieving state-of-the-art scalability in large datasets, such as Papers100M. However, the CDC focuses primarily 
+on general graph clustering and lacks mechanisms to balance global structural learning with local feature 
+preservation, which is critical for precise community detection.
+Our prior work introduced DPC-LPA9, which combines the clustering of density peaks with the propagation 
+of labels. By identifying community centers through improved density peak clustering and refinement of 
+label propagation based on node similarity and weight, DPC-LPA addresses the instability and inefficiency of 
+traditional LPAs. It demonstrated superior performance in modularity and stability compared to methods like 
+DCN, WCF-LPA, and CLPE, across various real-world datasets. Building on these advancements, this paper 
+proposes GATFELPA, which integrates the attention mechanism of GAT with the DPC-LPA label propagation 
+strategy. The attention mechanism enhances the model’s ability to focus on relevant node features, while DPC-
+LPA provides a robust framework for label propagation. Additionally, including a similarity preservation 
+module ensures that smoothed features retain local similarity and global distinctiveness. This hybrid design 
+enables accurate and scalable community detection, particularly for large-scale, sparse networks with rich node 
+attributes.
+Proposed algorithm
+To tackle the indiscriminate aggregation of neighboring nodes and the over-smoothing issue in traditional GCN 
+models, we propose the GATFELPA model, which combines DPCELPA with Graph Attention Networks (GAT). 
+The model uses the Jaccard index in the GAT’s attention mechanism to accurately gauge the importance of 
+neighboring nodes, thus avoiding indiscriminate aggregation. An adaptive strategy based on intra-community 
+and inter-community distances is introduced to evaluate the smoothness of node representations and determine 
+the optimal number of aggregation layers. Additionally, a similarity-preserving module ensures that the 
+smoothed features exhibit both local similarity and global dissimilarity. The final community detection results 
+are obtained using DPCELPA on the smoothed features. The framework of the GATFELPA model is illustrated 
+in Fig. 1.
+As shown in Fig. 1, the GATFELPA framework consists of three key stages. First, the Graph Attention Network 
+(GAT) aggregates features while weighting the importance of neighbors. Second, the Similarity Preservation 
+Module balances local and global node relationships. Finally, the DPCELPA algorithm generates community 
+labels based on the refined node embeddings.
+Notation
+The following Table. 1 summarizes the notations used throughout the paper for clarity and consistency.
+Scientific Reports |         (2025) 15:3952 3| https://doi.org/10.1038/s41598-024-84962-4
+www.nature.com/scientificreports/
+
+--- PDF PAGE 4 ---
+Graph attention network
+Graph Convolutional Networks (GCNs) have shown promise in graph representation learning by stacking 
+first-order spectral filters and applying nonlinear activation functions. However, these methods often involve 
+redundant complexity for specific tasks, making them computationally expensive. To address this, Wu et al. 
+proposed the Simplified Graph Convolution (SGC) framework, which eliminates nonlinearities between layers, 
+reducing computational demands while preserving model performance 5. Despite these improvements, SGC 
+lacks the capability to differentiate between neighboring nodes of varying importance, which limits its utility 
+in community detection tasks. To overcome these limitations, this paper introduces a linear GAT that builds 
+upon SGC while incorporating an attention mechanism. This enhancement retains SGC’s low computational 
+complexity while assigning higher weights to more important neighboring nodes, enabling more effective 
+aggregation. The propagation rule of the linear GAT is defined as:
+ 
+h(l+1)i = ∑
+vj ∈N (vi)
+a(l+1)ij h(l)j  (1)
+Symbol Description
+G =( V, E ) The input graph with nodes V and edges E.
+N (vi) The set of neighbors for node vi.
+h(l)i Node representation of vi at the l-th layer.
+a(l)ij Attention coefficient between nodes vi and vj  at the l-th layer.
+intra(C) Intra-community distance, measuring density of connections within communities.
+inter(C) Inter-community distance, measuring sparsity of connections between communities.
+d_intra(t) Change in intra-community distance between consecutive aggregation layers.
+inter_intra(t) Balance metric between inter-community and intra-community distances.
+Sij Jaccard coefficient measuring attribute similarity between nodes vi and vj .
+αij Normalized attention weight for edge (vi,v j ).
+W Trainable weight matrix in the final node embedding layer.
+Table 1. Summary of notations.
+ 
+Fig. 1. GATFELPA Flowchart.
+ 
+Scientific Reports |         (2025) 15:3952 4| https://doi.org/10.1038/s41598-024-84962-4
+www.nature.com/scientificreports/
+
+--- PDF PAGE 5 ---
+where h(l)j  represents the output representation of node vi in layer l, with h(0)i = xi and α(l)ij  is the attention 
+coefficient between nodes vi and vj ∈ N (vi).
+T o accurately assess the importance of neighboring nodes, attention coefficients are calculated based on the 
+Jaccard coefficient, which measures the attribute similarity between nodes. This approach ensures that more 
+attention is allocated to edges connecting nodes likely to belong to the same community, reducing interference 
+from unrelated nodes. The Jaccard coefficient is defined as:
+ 
+S(l)ij = |h(l−1)i ∩ h(l−1)j ||h(l−1)i ∪ h(l−1)j |  (2)
+where h(l−1)i  and h(l−1)j  represent the embeddings of nodes vi and vj  after the (l − 1)-th aggregation. The 
+attention coefficients are then normalized using the softmax function:
+ 
+αij = softmaxj (Sij )=
+exp(S(l)ij )∑
+vk ∈N (vi) exp(S(l)ik )  (3)
+where, N (vi) represents the set of all neighboring nodes of node vi. This mechanism facilitates the selective 
+aggregation of local structural information, allowing the model to prioritize neighboring nodes that share 
+significant attribute similarities. As a result, the GAT captures both attribute similarities and local topological 
+structures, enhancing the model’ s ability to detect community affiliations.
+After l layers of aggregation, the smoothed features H(l) are computed. A single-layer neural network is then 
+applied to generate the final node representations:
+ H = HlW  (4)
+where W represents a trainable weight matrix. This process ensures that the node representations are both 
+computationally efficient and structurally informative.
+Adaptive calculation of aggregation layers
+In GCN-based models, determining the optimal number of aggregation layers k is pivotal to achieving smooth 
+and meaningful node features. Shallow GCNs have limited propagation ranges, restricting their ability to 
+capture global structures. Conversely, deep GCNs risk over-smoothing, where node representations become 
+indistinguishable, undermining their capacity to differentiate communities. To address this, the GATFELPA 
+model incorporates an adaptive strategy that dynamically determines k based on intra-community and inter-
+community structural metrics.
+An ideal community structure is characterized by dense intra-community connections and sparse inter-
+community connections. To quantify these properties, two metrics are introduced:
+• Intra-community distance (intra (C)): Measures the density of connections within communities, reflecting 
+internal cohesiveness.
+• Inter-community distance (inter (C)): Measures the sparsity of connections between communities, indicat-
+ing separation.These metrics are defined as follows:
+ 
+intra(C)= 1|C| ∑
+c∈C
+1
+|c|(|c|− 1)
+∑
+vi,v j ∈ c
+vi ̸= vj
+∥hi − hj ∥2
+ (5)
+ 
+inter(C)= 1|C| ∑
+c∈C
+1
+|c|(|N |−| c|)
+∑
+vi ∈ c
+vj /∈ c
+∥hi − hj ∥2
+ (6)
+where C represents the set of all communities, |C| is the total number of communities, |c| denotes the number of 
+nodes in community c, and hi,h j  are the smoothed features of nodes vi and vj . The total number of nodes in 
+the graph is represented as |N|.
+The adaptive strategy leverages these metrics to dynamically adjust k. Specifically, when intra(C) is large, indicating 
+loosely connected communities with less internal coherence, the number of aggregation layers k is increased to 
+enhance intra-community connectivity. Conversely, when inter(C) is small, indicating weak separation between 
+Scientific Reports |         (2025) 15:3952 5| https://doi.org/10.1038/s41598-024-84962-4
+www.nature.com/scientificreports/
+
+--- PDF PAGE 6 ---
+communities, the number of aggregation layers k is also increased to capture more global structural information. 
+By contrast, when both intra(C) is small and inter(C) is large, indicating tightly connected communities and 
+strong inter-community separability, the number of aggregation layers k is reduced to prevent over-smoothing. 
+Thus, by integrating these structural metrics into the GCN aggregation process, GATFELPA ensures that node 
+representations maintain a balance between smoothness and distinction, enhancing the model’s ability to detect 
+meaningful community structures.
+Moreover, to monitor over-smoothing, the rate of change in intra-community distance d_intra(t) between 
+consecutive aggregations is calculated as:
+ d_intra(t)= intra(C(t)) − intra(C(t−1)) (7)
+where C(t) represents the community detection result after the t-th aggregation. A continuously decreasing 
+or stable d_intra(t) indicates increasing intra-community tightness. Conversely, an increase in d_intra(t) 
+suggests over-smoothing, signaling the need to stop further aggregation. The optimal aggregation layer count is 
+reached when d_intra(t) > 0, and the intra-community distance is minimized at tselect = t − 1.
+While d_intra(t) effectively tracks intra-community cohesiveness, it overlooks inter-community separation. 
+T o address this, the inter-intra balance metric is introduced:
+ inter_intra(t)= inter(C(t)) − intra(C(t)) (8)
+where inter_intra(t) measures the trade-off between inter-community distance and intra-community 
+density. A higher inter_intra(t) value reflects improved separation between communities and tighter intra-
+community connections. The optimal number of aggregation layers, k, is determined as:
+ k = arg maxt≤tselect (inter_intra(t)) (9)
+By considering both d_intra(t) and inter_intra(t), the optimal value of k can be determined. This 
+formulation ensures that the selected k achieves the dual objectives of enhancing intra-community cohesiveness 
+and maintaining inter-community sparsity.
+To sum up, by jointly optimizing d_intra(t) and inter_intra(t), the GATFELPA model dynamically adapts 
+to the structural characteristics of the graph. This approach not only mitigates over-smoothing but also aligns 
+the aggregation process with the principle of ” dense intra-community connections and sparse inter-community 
+connections. ” The result is a robust and adaptive framework that preserves the integrity of community structures 
+while improving the performance of the detection task.
+Similarity preservation
+To enhance the accuracy of community detection, we introduce a similarity preservation module that emphasizes 
+the retention of local similarity while ensuring global dissimilarity among nodes. This module aims to align the 
+community division with both the network’s topology and its attribute information, preserving the structural 
+integrity of the graph.
+In the similarity preservation module, the Jaccard coefficient is used to quantify the similarity between each 
+node and all other nodes. Based on this measure:
+• The top sim_num most similar nodes are selected for each node to form the set of similar node pairs Ss, 
+representing strong intra-community connections.
+• The top dissim_num most dissimilar nodes are identified to construct the set of dissimilar node pairs Sd, 
+reflecting inter-community sparsity.Each node pair is assigned a binary label:
+• 
+• labelij =1  if (vi,v j ) ∈ Ss, indicating high similarity and likely intra-community membership.
+• labelij =0  if (vi,v j ) ∈ Sd, signifying significant dissimilarity and likely inter-community separation.Since 
+the number of dissimilar node pairs, Sd often exceeds the number of similar pairs, Ss, we employ batch pro-
+cessing and a cross-entropy loss function to balance the quantities and extract information effectively. The 
+set of dissimilar node pairs Sd is randomly divided into batch_num batches, allowing the model to process 
+smaller subsets iteratively, thus improving computational efficiency and comprehensively extracting informa-
+tion from dissimilar node pairs.
+The value of batch_num is calculated based on the ratio of dissimilar to similar node pairs: 
+batch_num = dissim_numsim_num . In each iteration, the model combines information from both a batch of dissimilar 
+pairs and similar pairs to optimize learning. The cross-entropy loss function used to optimize the model is:
+ 
+loss = − 12 · sim_num ∑
+(vi,vj )∈Ss ∪Siterd
+(labelij ln yij + (1 − labelij ) ln(1 − ln yij )) (10)
+Scientific Reports |         (2025) 15:3952 6| https://doi.org/10.1038/s41598-024-84962-4
+www.nature.com/scientificreports/
+
+--- PDF PAGE 7 ---
+where Siterd  denotes the dissimilar pairs processed in the current iteration, and yij , representing similarity, is 
+defined as:
+ 
+yij = sigmoid(hTi hj )= 11+ e−hTi hj  (11)
+with hi and hj  being the features of nodes vi and vj , respectively. This formulation ensures that the similarity 
+preservation module effectively learns from both local connections (similar pairs) and global separations 
+(dissimilar pairs).
+By iteratively optimizing the embeddings using the similarity preservation module, the GATFELPA model 
+ensures that the learned node representations reflect both intra-community cohesiveness and inter-community 
+distinctiveness. This module not only improves the accuracy of community detection but also strengthens the 
+model’ s ability to generalize across diverse network structures.
+Finally, the refined embeddings generated by the similarity preservation module are input to the DPCELPA 
+algorithm, which finalizes the community detection process. This integration enables GATFELPA to deliver 
+precise and effective outcomes, combining the strengths of local feature preservation, global structural 
+understanding, and robust label propagation.
+Experimental analysis
+To evaluate the performance and verify the effectiveness of the GATFELPA model, we conduct a series of 
+comparative experiments, ablation studies, parameter sensitivity analyses, and computational complexity 
+comparisons using four real-world network datasets. These experiments aim to assess the model’s accuracy, 
+robustness, scalability, and computational efficiency across varying network structures and sizes.
+Datasets
+The experiments utilized four widely studied real-world datasets: Cora, CiteSeer, PubMed, and ogbn-arxiv. 
+Table 2 summarizes the key characteristics of these datasets. The first three datasets are benchmark citation 
+networks commonly used in graph-based community detection studies. Each dataset represents a network 
+where nodes correspond to publications, edges denote citation relationships, and features describe attributes 
+extracted from text. These datasets vary in size and complexity, enabling a thorough evaluation of GATFELPA ’s 
+performance across different scales and structures.
+Additionally, we evaluated GATFELPA on the ogbn-arxiv dataset, a large-scale citation network containing 
+169,343 nodes and 1,166,243 edges, classified into 40 categories. This dataset serves as a challenging benchmark 
+for assessing the model’s scalability and efficiency when applied to extensive networks with high-dimensional 
+features and complex topologies.
+Baseline models
+To comprehensively evaluate the performance of the GATFELPA model, we compare it against several baseline 
+methods categorized into three groups based on their utilization of graph information: 
+ 1.  Methods Utilizing Only Node Attribute Information:
+• k-means26: A classical clustering algorithm that partitions data solely based on attribute similarities with-
+out considering graph structural information.
+• DEC27: A deeply embedded clustering framework that iteratively optimizes a clustering objective and ad-
+justs data representations using Kullback-Leibler (KL) divergence, focusing exclusively on node attributes.
+• IDEC28: An extension of DEC that simultaneously preserves local data structures and enhances feature 
+representations tailored for clustering. It balances KL divergence-based clustering loss and local structure 
+preservation, leading to improved clustering performance.
+ 2.  Methods Utilizing Only Network Topological Information:
+• DeepWalk29: A graph embedding approach that combines random walks with Word2Vec to learn node 
+embeddings based on graph topology. Despite its simplicity, it lacks the ability to incorporate node attrib-
+utes.
+Dataset Nodes Edges Features Classes
+Cora 2708 5429 1433 7
+CiteSeer 3327 4732 3703 6
+PubMed 19717 44338 500 3
+ogbn-arxiv 169343 1166243 128 40
+Table 2. Characteristics of three real-world networks.
+ 
+Scientific Reports |         (2025) 15:3952 7| https://doi.org/10.1038/s41598-024-84962-4
+www.nature.com/scientificreports/
+
+--- PDF PAGE 8 ---
+• DNGR30: A deep neural graph representation method that employs random surfing to capture network 
+structure and a stacked denoising autoencoder to learn embeddings, focusing solely on graph connectivity.
+• Adaptive Label Propagation (ALP)12: A label propagation framework designed for overlapping commu-
+nity detection and group anomaly detection in heterogeneous networks. ALP uses adaptive weighting of 
+neighbors through a combinatorial multi-armed bandit mechanism, enabling flexible propagation. While 
+it excels in capturing complex structures, its focus on group anomalies differentiates it from conventional 
+community detection tasks.
+ 3.  Methods Utilizing Both Node Attribute and Network Topological Information:
+• GAE31: A Graph Autoencoder that encodes node features and decodes structural information using a 
+two-layer GCN and an inner product decoder, effectively combining graph topology and node attributes.
+• VGAE31: A Variational Graph Autoencoder that extends GAE with a variational framework, leveraging 
+latent variables to improve clustering robustness.
+• ARGE32: An Adversarially Regularized Graph Autoencoder that introduces a GAN to ensure latent distri-
+butions of node embeddings align with the underlying data structure, improving clustering performance.
+• ARVGE32: An extension of ARGE that integrates GANs into VGAE, enabling adversarial training to en -
+hance the latent representation for clustering.
+• DAEGC33: A Deep Attentional Embedding approach for attributed graph clustering. It employs an atten-
+tion mechanism to prioritize relevant features during the embedding process and a self-training module 
+for improved clustering outcomes.
+• GraphSAGE14: A sampling-based inductive learning framework that aggregates features from a fixed 
+number of neighbors, enabling scalability to large-scale graphs and generalization to unseen nodes. Its 
+sampling mechanism significantly improves efficiency but may omit critical structural information in 
+smaller or densely connected graphs.
+• GCNII20: An extension of GCNs incorporating identity mapping and residual connections to address 
+over-smoothing in deep networks. GCNII dynamically adjusts layer-wise weights, improving trainability 
+and scalability for complex graph tasks while maintaining feature .distinctiveness.
+• GATv217: A refinement of GAT that introduces a dynamic attention mechanism, allowing the model to 
+learn asymmetric edge importance based on node relationships. This flexibility enhances representation 
+learning in heterogeneous networks but may introduce higher computational costs for large-scale graphs.
+• MVGRL34: A Multi-View Graph Representation Learning method that leverages contrastive learning at 
+both node-level and graph-level, capturing a comprehensive representation of structural and attribute in-
+formation.
+• DCRN35: A Dual-Channel Relational Network designed to reduce redundancy and sparsity in hierarchical 
+data while extracting meaningful features, effectively mitigating overfitting.
+• CDBNE36: A Community Detection method based on unsupervised attributed network embeddings. It 
+employs an attention mechanism to encode structural and attribute information for community detection.
+• EFR-DRC37: An Enhanced Feature Representation approach for deep clustering. It uses a layered auto -
+encoder network to iteratively refine feature representations and employs a self-supervised mechanism to 
+optimize the clustering process.
+• DDGAE38: A Deep Attentional Graph Autoencoder that fuses structural, attribute, and modular informa-
+tion into unified embeddings, directly optimizing for community detection through a self-training mech-
+anism.
+• Beyond Homophily24: A method that reconstructs graphs by incorporating both homophilic and het -
+erophilic relationships. This enables effective clustering of nodes in diverse networks, particularly those 
+deviating from traditional homophilic assumptions.
+• CDC25: A contrastive learning-based framework designed to handle complex datasets. CDC learns embed-
+dings that integrate structural and attribute information, achieving robust performance on clustering tasks.
+• AOCD16: A method that enhances the NOCD framework by incorporating GATs. AOCD is particularly 
+effective in identifying overlapping communities by leveraging attention mechanisms to assign varying 
+importance to neighboring nodes, but it lacks optimization for non-overlapping or hybrid community 
+detection.
+• Semi-Supervised Label Propagation 19: A semi-supervised approach that combines GNNs with label 
+propagation, using labeled data to guide clustering. While it achieves superior results compared to tra -
+ditional unsupervised methods, its dependency on labeled data limits its applicability in large, unlabeled 
+networks.
+Evaluation metrics
+To comprehensively evaluate the performance of the proposed GATFELPA model in community detection tasks, 
+four widely recognized evaluation metrics are employed: Accuracy (ACC), Normalized Mutual Information 
+(NMI), Adjusted Rand Index (ARI), and F1 Score (F1). These metrics collectively provide a holistic and rigorous 
+assessment of the model’s capability to identify community structures effectively.
+Accuracy
+Accuracy quantifies the proportion of correctly identified nodes in their respective communities. It is computed 
+as follows:
+Scientific Reports |         (2025) 15:3952 8| https://doi.org/10.1038/s41598-024-84962-4
+www.nature.com/scientificreports/
+
+--- PDF PAGE 9 ---
+ ACC = maxm
+∑n
+i=1{1|yi =( predi)}
+n
+ (12)
+where m is the mapping function that considers all possible permutations of predicted community labels to align 
+with the true labels, n is the total number of nodes, yi is the true label of node vi, and predi is the predicted 
+label of node vi.
+The mapping m ensures an optimal match between the ground truth and predicted labels, accounting for the 
+arbitrary nature of label assignments in clustering tasks.
+Normalized mutual information
+NMI evaluates the quality of predicted communities by measuring the amount of information shared between 
+the true communities C and the predicted communities C′. It is defined as:
+ 
+NMI (C, C′)= MI (C, C′)√
+H(C)H(C′)  (13)
+where H(C) and H(C′) are the entropies of the true and predicted community distributions, respectively, and 
+MI (C, C′) is the mutual information between C and C′, calculated as:
+ 
+MI (C, C′)= ∑
+ci∈C,cj ∈C′
+p(ci,c j ) log p(ci,c j )p(ci)p(cj )  (14)
+Here, p(ci) and p(cj ) denote the probabilities of a node belonging to communities ci and cj , respectively, while 
+p(ci,c j ) represents the joint probability of a node being assigned to both ci and cj .
+NMI is bounded between 0 and 1, where a higher value indicates greater alignment between the predicted and 
+true community structures.
+Adjusted rand index
+The Adjusted Rand Index (ARI) evaluates the similarity between the true and predicted partitions, adjusting for 
+the possibility of random agreement. Unlike other clustering metrics, ARI specifically accounts for the chance 
+grouping of nodes, making it a robust measure of clustering quality. ARI is calculated as follows:
+ 
+ARI = Index − Expected IndexMax Index − Expected Index  (15)
+where Index represents the number of agreements between the true and predicted partitions, ExpectedIndex is 
+the expected number of agreements by chance, and MaxIndex is the maximum possible number of agreements.
+The computation is based on pairwise combinations of nodes, where each pair is categorized as:
+ 
+ARI =
+∑
+i,j
+( nij
+2
+)
+−
+[∑
+i
+( ai
+2
+)
+·
+∑
+j
+( bj
+2
+)]
+/
+( n
+2
+)
+1
+2
+[∑
+i
+( ai
+2
+)
++
+∑
+j
+( bj
+2
+)]
+−
+[∑
+i
+( ai
+2
+)
+·
+∑
+j
+( bj
+2
+)]
+/
+( n
+2
+)  (16)
+where, nij  is the number of nodes in both true community Ci and predicted community C′j , ai = ∑j nij  is 
+the total number of nodes in the true community Ci, bj =
+∑
+i nij  is the total number of nodes in the predicted 
+community C′j , and ( n2 ) represents the total number of node pairs in the dataset.
+The ARI metric is particularly useful for comparing clustering methods across datasets with varying sizes and 
+numbers of communities, as it provides a normalized and unbiased evaluation.
+F1 Score
+The F1 Score balances precision and recall to assess the overall performance of community detection methods. 
+It is calculated as:
+ 
+F 1macro = 2 · P recisionmacro · Recallmacro
+P recisionmacro + Recallmacro
+ (17)
+where P recisionmacro  and Recallmacro  are the macro-averaged precision and recall across all communities:
+Scientific Reports |         (2025) 15:3952 9| https://doi.org/10.1038/s41598-024-84962-4
+www.nature.com/scientificreports/
+
+--- PDF PAGE 10 ---
+ 
+P recisionmacro = 1|C|
+|C|∑
+i=1
+P recisioni (18)
+ 
+Recallmacro = 1|C|
+|C|∑
+i=1
+Recalli (19)
+Here, P recisioni and Recalli are the precision and recall for community Ci, |C| represents the total number 
+of communities.
+The F1 Score is particularly useful in datasets with imbalanced community sizes, as it evaluates the model’s 
+ability to correctly classify both major and minor communities.
+Parameter settings
+The GATFELPA model employs an adaptive strategy to dynamically determine the number of aggregation 
+layers k, optimizing the smoothness of node representations as described in Sect. 3.2. This adaptive approach is 
+rigorously evaluated in Sect.4.3 to highlight its impact on the model’s performance. The parameters used for the 
+GATFELPA model across all datasets are set as follows:
+• Learning Rate: Fixed at 0.001 to ensure stable convergence during training.
+• sim_num: Set to 0.01| N|, representing 1% of the total number of nodes, to select the most similar node 
+pairs.
+• Dropout Rate: Fixed at 0.8 to prevent overfitting and enhance model generalization.
+• Single-layer Neural Network Size:  Set to 500, providing sufficient capacity to capture meaningful feature 
+representations.Given the imbalance between the number of similar and dissimilar node pairs, sim_num 
+is varied to assess the robustness of the model. Specifically, dissim_num is set to 0.6|N|, 0.7|N|, 0.8|N|, and 
+0.9|N|, representing 60%, 70%, 80%, and 90% of the total number of nodes, respectively. This variation allows 
+a thorough exploration of the model’s sensitivity to the relative proportions of similar and dissimilar pairs.
+These parameter settings are chosen to balance computational efficiency and clustering accuracy, ensuring the 
+model performs well across datasets of varying scales and complexities. By systematically varying dissim_num
+, the model’ s adaptability and robustness in handling diverse community structures are further validated. The 
+fixed learning rate and dropout rate align with established practices in graph neural networks, providing a stable 
+foundation for reproducibility and comparative analysis.
+This detailed parameter configuration ensures that the GATFELPA model is evaluated under consistent 
+and rigorous conditions, facilitating a fair comparison with baseline methods while emphasizing the model’ s 
+flexibility and scalability.
+Comparative experiments
+In this section, we analyze the performance of GATFELPA using four real-world datasets: Cora, CiteSeer, 
+PubMed, and ogbn-arxiv. For methods without built-in clustering mechanisms, such as DeepWalk and DEC, 
+k-means clustering is applied to identify communities, followed by graph representation application. For other 
+baseline methods, we use community detection results either reported in their respective original papers or 
+obtained through re-implementation under consistent experimental settings. Table 3 summarizes the community 
+detection results for 24 methods.
+Table 3 highlights GATFELPA ’s performance, showcasing consistent improvements across most metrics. 
+Detailed observations are as follows:
+• Cora Dataset: GATFELPA outperforms the top-performing baseline, DDGAE, with improvements of 0.14% 
+in ACC, 0.8% in NMI, 0.29% in ARI, and 0.2% in F1. These results highlight the model’ s capability to cap-
+ture both local and global graph structures effectively.
+• CiteSeer Dataset: Although GATFELPA underperforms slightly in ACC −1% and F1 −0.9% compared to 
+DDGAE, it surpasses DDGAE in NMI +1% and ARI +0.3%. This indicates its ability to maintain competi-
+tive performance while preserving node feature diversity.
+• PubMed Dataset: GATFELPA achieves comparable results with DDGAE, demonstrating minimal perfor -
+mance differences in ACC and ARI. This suggests that the model performs reliably on large and sparse net -
+works.
+• ogbn-arxiv Dataset:  GATFELPA demonstrates substantial improvements, outperforming the second-best 
+model, CDC, by 0.5% in ACC, 1.8% in NMI, 1.8% in ARI, and 0.4% in F1. This demonstrates its scalability 
+and efficiency on large-scale datasets, highlighting its suitability for real-world applications.These results un-
+derscore the importance of integrating both node attribute information and network topology for community 
+detection. Models relying solely on attribute information (e.g., DeepW alk 29, DNGR 30, ALP 12) or network 
+topology (e.g., k-means26, DEC27, IDEC28) exhibit significant limitations in capturing the intricate structures 
+of real-world graphs. In contrast, hybrid models, such as GATFELPA, successfully combine these elements to 
+achieve superior performance.
+Scientific Reports |         (2025) 15:3952 10| https://doi.org/10.1038/s41598-024-84962-4
+www.nature.com/scientificreports/
+
+--- PDF PAGE 11 ---
+Advanced models leveraging attention mechanisms (e.g., DAEGC 33, GraphSAGE 14, GCNII 20, GATv2 17, 
+MVGRL34, CDBNE 36, DDGAE 38, Beyond Homophily 24, CDC 25, AOCD 16, and Semi-Supervised Label 
+Propagation19) or feature enhancement techniques (e.g., EFR-DRC 37) have demonstrated remarkable 
+performance in community detection. Although GATFELPA slightly underperforms compared to DDGAE38 on 
+the CiteSeer and PubMed datasets, DDGAE employs a more complex dual-attention model to integrate multi-
+view graph information, which comes at the cost of higher computational requirements.
+In summary, GATFELPA sets a new benchmark for community detection by achieving consistent 
+improvements across multiple datasets and metrics. Its ability to outperform strong baselines such as DDGAE 
+and CDC, particularly on large-scale networks, highlights its potential for tackling real-world challenges 
+involving complex graph structures. The scalability and robustness of GATFELPA make it a promising choice 
+for community detection in both academic research and practical applications.
+Ablation experiments
+To evaluate the contributions of the aggregation and similarity preservation modules in the GATFELPA model, 
+we conducted ablation experiments under the following configurations:
+• ”w/o Aggregation”: The GATFELPA model without the aggregation module, relying only on the similarity 
+preservation module and the DPCELPA algorithm.
+• ”w/o SimilarityPreserve”: The GATFELPA model without the similarity preservation module, relying solely 
+on the aggregation module and the DPCELPA algorithm.
+• ”w/o Aggregation and SimilarityPreserve”: The GATFELPA model without aggregation and similarity pres-
+ervation modules, effectively reducing the model to the DPCELPA algorithm.The experiments were conduct-
+ed on four datasets: Cora, CiteSeer, PubMed, and ogbn-arxiv. The results, summarized in Table  4, provide 
+insights into the role of each module in the model’s overall performance.
+The ablation experiments underscore the significant contributions of the aggregation and similarity preservation 
+modules in the GATFELPA model. Removing either module leads to consistent performance declines across all 
+four datasets - Cora, CiteSeer, PubMed, and ogbn-arxiv, while the largest degradation is observed when both 
+modules are excluded (”w/o Aggregation and SimilarityPreserve”). Metrics such as ACC, NMI, ARI, and F1 
+experience substantial drops, demonstrating the limitations of the DPCELPA algorithm when used in isolation.
+When the aggregation module is removed (”w/o Aggregation”), all metrics, including ACC and ARI, decline 
+significantly. Across the datasets, ACC decreases by approximately 15-25%, and ARI drops by 20-30%. This 
+Cora CiteSeer PubMed ogbn-arxiv
+ACC NMI ARI F1 ACC NMI ARI F1 ACC NMI ARI F1 ACC NMI ARI F1
+k-means 0.569 0.233 0.163 0.329 0.393 0.169 0.134 0.361 0.598 0.311 0.281 0.598 0.482 0.265 0.238 0.471
+DEC 0.488 0.260 0.206 0.454 0.559 0.283 0.281 0.526 0.601 0.224 0.239 0.615 0.501 0.272 0.245 0.488
+IDEC 0.509 0.286 0.232 0.505 0.605 0.272 0.257 0.616 0.607 0.237 0.206 0.624 0.516 0.295 0.268 0.502
+DeepWalk 0.529 0.384 0.291 0.435 0.390 0.131 0.137 0.305 0.647 0.238 0.255 0.530 0.530 0.301 0.273 0.519
+DNGR 0.419 0.318 0.142 0.340 0.326 0.180 0.043 0.300 0.468 0.153 0.059 0.445 0.485 0.237 0.204 0.460
+ALP 0.710 0.550 0.510 0.705 0.690 0.468 0.475 0.645 0.685 0.315 0.305 0.665 0.630 0.395 0.360 0.620
+GAE 0.530 0.397 0.293 0.415 0.614 0.346 0.336 0.574 0.621 0.238 0.206 0.614 0.561 0.310 0.285 0.545
+VGAE 0.592 0.408 0.347 0.456 0.610 0.327 0.331 0.577 0.619 0.216 0.201 0.478 0.565 0.322 0.290 0.552
+ARGE 0.640 0.449 0.352 0.619 0.573 0.350 0.341 0.546 0.668 0.305 0.295 0.656 0.589 0.345 0.310 0.570
+ARVGE 0.638 0.450 0.374 0.627 0.544 0.261 0.245 0.529 0.690 0.290 0.306 0.678 0.600 0.352 0.325 0.585
+DAEGC 0.704 0.528 0.496 0.682 0.645 0.364 0.378 0.636 0.687 0.283 0.298 0.682 0.612 0.372 0.342 0.598
+MVGRL 0.705 0.552 0.487 0.672 0.687 0.437 0.443 0.637 0.670 0.316 0.294 0.671 0.615 0.384 0.357 0.602
+DCRN 0.619 0.451 0.332 0.495 0.709 0.459 0.476 0.658 0.699 0.322 0.314 0.689 0.603 0.365 0.330 0.590
+CDBNE 0.710 0.533 0.507 0.689 0.695 0.437 0.444 0.647 0.706 0.336 0.336 0.702 0.619 0.382 0.348 0.608
+EFR-DRC 0.722 0.528 0.497 0.705 0.704 0.445 0.462 0.642 – – – – 0.630 0.401 0.370 0.619
+DDGAE 0.738 0.555 0.525 0.714 0.716 0.466 0.479 0.659 0.716 0.348 0.346 0.713 0.645 0.410 0.383 0.632
+Beyond Homophily 0.719 0.532 0.495 0.700 0.705 0.459 0.472 0.654 0.712 0.342 0.330 0.700 0.651 0.425 0.395 0.640
+CDC 0.731 0.547 0.510 0.711 0.710 0.462 0.481 0.662 0.715 0.345 0.340 0.705 0.660 0.432 0.402 0.648
+AOCD 0.702 0.540 0.500 0.690 0.675 0.460 0.470 0.640 0.695 0.310 0.290 0.680 0.640 0.380 0.350 0.610
+Semi-Supervised 0.680 0.520 0.490 0.670 0.660 0.450 0.460 0.630 0.670 0.320 0.310 0.650 0.620 0.370 0.340 0.590
+GraphSAGE 0.705 0.530 0.490 0.675 0.680 0.455 0.460 0.640 0.710 0.330 0.320 0.700 0.630 0.410 0.380 0.620
+GCNII 0.728 0.556 0.515 0.705 0.700 0.470 0.475 0.655 0.722 0.346 0.350 0.712 0.660 0.435 0.410 0.645
+GATv2 0.735 0.560 0.520 0.710 0.705 0.472 0.478 0.660 0.725 0.350 0.360 0.715 0.665 0.440 0.415 0.650
+GATFELPA 0.739 0.563 0.528 0.716 0.706 0.476 0.482 0.650 0.719 0.346 0.360 0.710 0.665 0.450 0.420 0.652
+Table 3. Results of community detection on different real-world datasets for 24 methods. The bold values in 
+the tables represent the highest values achieved in each group of experiments.
+ 
+Scientific Reports |         (2025) 15:3952 11| https://doi.org/10.1038/s41598-024-84962-4
+www.nature.com/scientificreports/
+
+--- PDF PAGE 12 ---
+demonstrates the critical role of the aggregation module in capturing global graph information and propagating 
+node features across the network. The absence of this module severely limits the model’s ability to account for 
+structural patterns, particularly in large-scale datasets.
+Excluding the similarity preservation module (”w/o SimilarityPreserve”) results in a moderate decline in 
+performance. Metrics such as NMI and F1 consistently drop by 10-15% across the datasets. This indicates the 
+importance of retaining local node feature information, which prevents over-smoothing and preserves inter-
+community distinctions. The similarity preservation module ensures that essential local features are retained, 
+complementing the global aggregation process.
+The most substantial performance degradation occurs when both modules are removed(”w/o Aggregation 
+and SimilarityPreserve”), reducing the model to the standalone DPCELPA algorithm. This configuration exhibits 
+a severe loss in performance, with ACC and ARI values dropping by over 30% on average. These results confirm 
+the necessity of both modules for achieving high-quality community detection.
+The combination of both modules in the full GATFELPA model delivers the best results across all datasets. 
+Compared to configurations missing either or both modules, the full model achieves improvements in ACC 
+10–30%, NMI 15–25%, ARI 20–35%, and F1 15–25% across the board. These improvements highlight the 
+synergy between the two modules, with the aggregation module capturing global structural information and 
+the similarity preservation module retaining critical local features. Together, they enable the model to effectively 
+handle diverse graph structures.
+To sum up, the results in Table 4 validate the necessity of both the aggregation and similarity preservation 
+modules in the GATFELPA model. The aggregation module captures global structural features, while the 
+similarity preservation module retains essential local attributes. Their complementary functions enable 
+GATFELPA to achieve superior performance across diverse datasets, ensuring robustness and scalability for 
+community detection tasks.
+The impact of k value on experimental results
+This section examines how the number of aggregation layers, k, influences the performance of the GATFELPA 
+model. Using the adaptive strategy outlined in Sect.3.2, the optimal k values for the Cora, CiteSeer, PubMed, and 
+ogbn-arxiv datasets are determined to be 8, 6, 25, and 25, respectively.
+The results in Fig.  2 highlight the effectiveness of the proposed strategy, which evaluates both inter-
+community ( inter_intra) and intra-community ( d_intra) distances to balance community separability 
+and compactness. On the PubMed and ogbn-arxiv datasets, d_intra remains negative for small k, reflecting 
+compact intra-community structures. However, when k> 45, d_intra trends toward zero, indicating reduced 
+compactness without sufficient improvement in separability. The proposed strategy identifies k = 25 as optimal, 
+achieving a balance where inter_intra maximizes separability and d_intra retains compactness.
+This trend is consistent across datasets. The adaptive strategy prevents over-smoothing of node representations 
+by selecting appropriate k values, which is crucial for optimizing community detection. Notably, the strategy 
+enhances the robustness and scalability of GATFELPA, especially on large datasets like PubMed and ogbn-arxiv.
+Figure 3 and Table 4 further validate the effectiveness of the strategy by examining its impact on evaluation 
+metrics (ACC, NMI, ARI, and F1). The metrics generally increase with k initially but degrade when k becomes 
+too large, indicating over-smoothing. GATFELPA achieves near-optimal results with the k values determined by 
+the adaptive strategy, demonstrating its reliability in balancing performance and robustness.
+To further validate the proposed method, we compared it with a fixed k and considered only d_intra 
+without incorporating inter_intra. On the PubMed dataset, the results reveal that relying solely on d_intra 
+fails to identify the optimal k. The fixed approach often overemphasizes compactness at the cost of separability, 
+leading to suboptimal clustering performance. In contrast, the proposed adaptive strategy effectively balances 
+intra-community compactness and inter-community separability, resulting in robust and scalable performance 
+across all datasets.
+In conclusion, the adaptive strategy effectively balances community separability and compactness, enabling 
+consistent and robust performance across diverse datasets. This demonstrates the efficacy of the proposed 
+method in optimizing community detection with GATFELPA.
+Computational complexity comparison
+To evaluate the computational efficiency of GATFELPA, we compare its theoretical complexity and empirical 
+runtime with other models, including GAE, VGAE, and DDGAE.
+Cora CiteSeer Pubmed ogbn-arxiv
+ACC NMI ARI F1 ACC NMI ARI F1 ACC NMI ARI F1 ACC NMI ARI F1
+w/o Agg 0.569 0.345 0.335 0.477 0.611 0.367 0.322 0.573 0.626 0.287 0.276 0.645 0.589 0.350 0.322 0.570
+w/o Sim 0.680 0.513 0.485 0.621 0.650 0.435 0.431 0.624 0.646 0.318 0.327 0.650 0.615 0.378 0.348 0.600
+w/o Agg+Sim 0.359 0.181 0.218 0.331 0.433 0.183 0.137 0.375 0.421 0.250 0.222 0.385 0.460 0.285 0.252 0.442
+GATFELPA 0.739 0.563 0.528 0.716 0.706 0.476 0.482 0.650 0.719 0.346 0.360 0.710 0.665 0.450 0.420 0.652
+Table 4. Ablation experiment results of GATFELPA. The bold values in the tables represent the highest values 
+achieved in each group of experiments.
+ 
+Scientific Reports |         (2025) 15:3952 12| https://doi.org/10.1038/s41598-024-84962-4
+www.nature.com/scientificreports/
+
+--- PDF PAGE 13 ---
+Theoretical complexity analysis
+• GATFELP A: O(|E| + k ·| N |), where k is the adaptive number of aggregation layers, | N| is the number of 
+nodes, and |E| is the number of edges.
+• GAE/VGAE: O(k · (|E| + |N |d)), where d is the feature dimension of nodes.
+• DDGAE: O(k · (|E| + |N |d + A)), where A represents the additional computational overhead of attention 
+mechanisms.
+• Beyond Homophily : O(k · (|E| + |N |d2)), Beyond Homophily reconstructs graph structure iteratively, 
+with each iteration involving high-dimensional matrix operations for structure reconstruction, making it 
+computationally more expensive as d increases.
+• CDC: O(|E| + k ·| N |d + |C|), where |C| represents the number of clusters. CDC incorporates clustering 
+objectives directly into its framework, adding complexity proportional to the number of clusters and requir-
+ing additional overhead during optimization.These analyses show that GATFELPA achieves lower complexity 
+than Beyond Homophily and CDC, particularly in high-dimensional settings, as it avoids iterative graph 
+reconstruction or additional cluster-based optimization steps.
+Empirical runtime comparison
+The empirical runtime of each model on four datasets is presented in Table 5.
+From the above table we can conclude that:
+• Scalability: On larger datasets like PubMed and ogbn-arxiv, GATFELPA exhibits significantly lower runt -
+ime compared to DDGAE and GCN-based methods such as GAE and VGAE. For instance, on ogbn-arxiv, 
+GATFELPA completes in 504.6 seconds, outperforming DDGAE, which requires 1200.3 seconds, by a wide 
+margin.
+Fig. 2. The impact of k value on d_intra and inter_intra across different datasets.
+ 
+Scientific Reports |         (2025) 15:3952 13| https://doi.org/10.1038/s41598-024-84962-4
+www.nature.com/scientificreports/
+
+--- PDF PAGE 14 ---
+• Efficiency: GATFELPA ’s hybrid mechanism efficiently reduces redundant computations, leveraging its adap-
+tive k strategy and similarity preservation module to balance accuracy and computational cost. The linear 
+GAT architecture used in GATFELPA further enhances efficiency by avoiding the computationally expensive 
+matrix multiplications required in models like GAE and VGAE.
+• Comparison with Alternatives: Methods relying on attention mechanisms (e.g., DDGAE, Beyond Homo -
+phily) exhibit higher complexity and runtime due to their intricate operations. While these methods capture 
+fine-grained representations, they sacrifice scalability, especially on large-scale datasets.The results highlight 
+the practicality of GATFELPA for real-world applications involving large-scale datasets, where computa -
+tional resources are often limited. By combining theoretical simplicity with empirical efficiency, GATFELPA 
+demonstrates its ability to handle diverse graph structures without excessive computational overhead.
+Moreover, the adaptive k value selection strategy plays a crucial role in mitigating over-smoothing and ensuring 
+robust performance, as validated by the comparative runtime and accuracy results. Thus, GATFELPA provides a 
+Dataset GATFELP A (s) GAE (s) VGAE (s) DDGAE (s) Beyond homophily (s) CDC (s)
+Cora 12.3 15.7 16.4 25.9 14.5 18.1
+CiteSeer 14.5 18.2 19.3 30.2 16.2 20.3
+PubMed 110.4 130.7 140.2 210.5 120.3 150.1
+ogbn-arxiv 504.6 670.8 710.4 1200.3 580.2 690.4
+Table 5. Computational complexity comparison.
+ 
+Fig. 3. k value’s impact on ACC, NMI, ARI and F1 across different datasets.
+ 
+Scientific Reports |         (2025) 15:3952 14| https://doi.org/10.1038/s41598-024-84962-4
+www.nature.com/scientificreports/
+
+--- PDF PAGE 15 ---
+balanced trade-off between computational efficiency and model accuracy, making it an ideal choice for scalable 
+community detection tasks.
+Conclusions
+This paper addresses the limitations of traditional Graph Convolutional Networks (GCNs) and their overlap 
+with Label Propagation Algorithms (LPA) by proposing GATFELPA, a novel community detection model for 
+graph networks. GATFELPA integrates the strengths of attention mechanisms, similarity preservation, and 
+adaptive aggregation to achieve superior performance in community detection tasks.
+The model innovatively employs the Jaccard coefficient in its attention mechanism, enabling efficient 
+integration of local graph information without introducing additional parameters. This design preserves the 
+computational simplicity of Simplified Graph Convolution (SGC) while overcoming its inability to distinguish 
+the varying importance of neighboring nodes. As a result, GATFELPA effectively captures both structural and 
+attribute-based information in graphs.
+To address the challenges of over-smoothing and limited propagation ranges in GCNs, GATFELPA adopts an 
+adaptive strategy, embedded within the DPCELPA algorithm, to determine the optimal number of aggregation 
+layers k. By evaluating inter-community and intra-community distances, this strategy ensures a fine-tuned 
+aggregation process, achieving a balance between compact intra-community structures and well-separated 
+inter-community relationships. This mechanism enhances the model’s ability to handle diverse and complex 
+network structures.
+A similarity preservation module further refines the node representations by maintaining local similarity and 
+global dissimilarity in the smoothed features. This module ensures that critical local features are retained, which 
+complements the global structural insights provided by the aggregation process. Together with the DPCELPA 
+algorithm, this hybrid design results in a robust and efficient framework for community detection.
+Comprehensive experiments across four real-world datasets (Cora, CiteSeer, PubMed, and ogbn-arxiv) 
+demonstrate that GATFELPA consistently outperforms state-of-the-art models in terms of accuracy, NMI, 
+ARI, and F1-score. Ablation studies underscore the essential contributions of the aggregation and similarity 
+preservation modules, while sensitivity analyses validate the effectiveness of the adaptive strategy for optimizing 
+k. Computational complexity comparisons further highlight GATFELPA ’s scalability and efficiency, particularly 
+on large-scale datasets such as ogbn-arxiv.
+In conclusion, GATFELPA represents a significant advancement in community detection, offering a scalable, 
+robust, and accurate solution for the analysis of complex graph networks. Its ability to integrate local and global 
+graph information while maintaining computational efficiency establishes it as a valuable tool for both academic 
+research and practical applications in graph-based data analysis. Future research could explore extending the 
+model to dynamic or heterogeneous graphs, further enhancing its versatility in addressing real-world challenges.
+Data availability
+The datasets used and/or analyzed during the current study are available from the corresponding author upon 
+reasonable request.
+Received: 2 October 2024; Accepted: 30 December 2024
+References
+ 1. Hao, J. & Zhu, W . Deep graph clustering with enhanced feature representations for community detection. Appl. Intell. 53, 1336–
+1349 (2023).
+ 2. Lopes, T., Ströele, V ., Dantas, M. A. R., Braga, R. & Méhaut, J. A parallel graph partitioning approach to enhance community 
+detection in social networks. In IEEE Symposium on Computers and Communications, ISCC 2020, Rennes, France, July 7-10, 2020, 
+1–6 (IEEE, 2020).
+ 3. Shen, X. & Chung, F . Deep network embedding for graph representation learning in signed networks. IEEE Trans. Cybernetics 50, 
+1556–1568 (2020).
+ 4. Lee, J. B., Rossi, R. A., Kim, S., Ahmed, N. K. & Koh, E. Attention models in graphs: A survey. ACM Trans. Knowl. Discovery Data 
+13, 62:1-62:25 (2019).
+ 5. Wu, F . et al. Simplifying graph convolutional networks. In International conference on machine learning, 6861–6871 (PMLR, 2019).
+ 6. Zhang, X., Liu, H., Li, Q. & Wu, X.-M. Attributed graph clustering via adaptive graph convolution. arXiv 
+preprint[SPACE]arXiv:1906.01210 (2019).
+ 7. Chen, D. et al. Measuring and relieving the over-smoothing problem for graph neural networks from the topological view. In 
+Proceedings of the AAAI conference on artificial intelligence 34, 3438–3445 (2020).
+ 8. Li, C., Tang, Y ., Tang, Z., Cao, J. & Zhang, Y . Motif-based embedding label propagation algorithm for community detection. Int. J. 
+Intell. Syst. 37, 1880–1902 (2022).
+ 9. Xiaohan, Z., Feiyi, T., Wenjing, G., Chao, C. & Chengjie, M. Community detection algorithm based on density peak clustering and 
+label propagation. J. South China Normal Univ. (Natural Science Edition) 55, 78–87 (2023).
+ 10. Newman, M. E. Finding and evaluating community structurein networks. Phys. Rev. E 69, 1–16 (2004).
+ 11. Von Luxburg, U. A tutorial on spectral clustering. Stat. Comput. 17, 395–416 (2007).
+ 12. Li, Z., Chen, X., Song, J. & Gao, J. Adaptive label propagation for group anomaly detection in large-scale networks. IEEE Trans. 
+Knowl. Data Eng. 35, 12053–12067 (2022).
+ 13. Kipf, T.  N. & Welling, M. Semi-supervised classification with graph convolutional networks. arXiv preprint[SPACE]arXiv:1609.02907 
+(2016).
+ 14. Hamilton, W ., Ying, Z. & Leskovec, J. Inductive representation learning on large graphs. Advances in neural information processing 
+systems30 (2017).
+ 15. Velickovic, P . et al. Graph attention networks. stat 1050, 10–48550 (2017).
+ 16. Sismanis, K., Potikas, P ., Souliou, D. & Pagourtzis, A. Overlapping community detection using graph attention networks. Futur. 
+Gener. Comput. Syst. 163, 107529 (2025).
+ 17. Brody, S., Alon, U. & Y ahav, E. How attentive are graph attention networks? arXiv preprint[SPACE]arXiv:2105.14491 (2021).
+Scientific Reports |         (2025) 15:3952 15| https://doi.org/10.1038/s41598-024-84962-4
+www.nature.com/scientificreports/
+
+--- PDF PAGE 16 ---
+ 18. Gasteiger, J., Bojchevski, A. & Günnemann, S. Predict then propagate: Graph neural networks meet personalized pagerank. arXiv 
+preprint[SPACE]arXiv:1810.05997 (2018).
+ 19. Muppidi, S., Angadi, A. & Gorripati, S. K. Semi-supervised label propagation community detection on graphs with graph neural 
+network. In 2022 First International Conference on Artificial Intelligence Trends and Pattern Recognition (ICAITPR) , 1–6 (IEEE, 
+2022).
+ 20. Chen, M., Wei, Z., Huang, Z., Ding, B. & Li, Y . Simple and deep graph convolutional networks. In International conference on 
+machine learning, 1725–1735 (PMLR, 2020).
+ 21. Dwivedi, V . P . & Bresson, X. A generalization of transformer networks to graphs. arXiv preprint[SPACE]arXiv:2012.09699 (2020).
+ 22. Liu, F . et al. Deep learning for community detection: progress, challenges and opportunities. arXiv preprint[SPACE]arXiv:2005.08225 
+(2020).
+ 23. Su, X. et al. A comprehensive survey on community detection with deep learning. IEEE Transactions on Neural Networks and 
+Learning Systems (2022).
+ 24. Pan, E. & Kang, Z. Beyond homophily: Reconstructing structure for graph-agnostic clustering. In International Conference on 
+Machine Learning, 26868–26877 (PMLR, 2023).
+ 25. Kang, Z., Xie, X., Li, B. & Pan, E. Cdc: A simple framework for complex data clustering. arXiv preprint[SPACE]arXiv:2403.03670 
+(2024).
+ 26. Krishna, K. & Murty, M. N. Genetic k-means algorithm. IEEE Transactions on Systems, Man, and Cybernetics, Part B (Cybernetics)29, 
+433–439 (1999).
+ 27. Xie, J., Girshick, R. & Farhadi, A. Unsupervised deep embedding for clustering analysis. In International conference on machine 
+learning, 478–487 (PMLR, 2016).
+ 28. Guo, X., Gao, L., Liu, X. & Yin, J. Improved deep embedded clustering with local structure preservation. In Ijcai 17, 1753–1759 
+(2017).
+ 29. Perozzi, B., Al-Rfou, R. & Skiena, S. Deepwalk: Online learning of social representations. In Proceedings of the 20th ACM SIGKDD 
+international conference on Knowledge discovery and data mining, 701–710 (2014).
+ 30. Cao, S., Lu, W . & Xu, Q. Deep neural networks for learning graph representations. In Proceedings of the AAAI conference on 
+artificial intelligence, vol. 30 (2016).
+ 31. Kipf, T. N. & Welling, M. Variational graph auto-encoders. arXiv preprint[SPACE]arXiv:1611.07308 (2016).
+ 32. Pan, S. et al. Adversarially regularized graph autoencoder for graph embedding. arXiv preprint[SPACE]arXiv:1802.04407 (2018).
+ 33. Wang, C. et al. Attributed graph clustering: A deep attentional embedding approach. arXiv preprint[SPACE]arXiv:1906.06532 
+(2019).
+ 34. Hassani, K. & Khasahmadi, A. H. Contrastive multi-view representation learning on graphs. In International conference on machine 
+learning, 4116–4126 (PMLR, 2020).
+ 35. Liu, Y . et al. Deep graph clustering via dual correlation reduction. In Proceedings of the AAAI conference on artificial intelligence 36, 
+7603–7611 (2022).
+ 36. Zhou, X., Su, L., Li, X., Zhao, Z. & Li, C. Community detection based on unsupervised attributed network embedding. Expert Syst. 
+Appl. 213, 118937 (2023).
+ 37. Hao, J. & Zhu, W . Deep graph clustering with enhanced feature representations for community detection. Appl. Intell. 53, 1336–
+1349 (2023).
+ 38. Wu, X., Lu, W ., Quan, Y ., Miao, Q. & Sun, P . G. Deep dual graph attention auto-encoder for community detection. Expert Syst. Appl. 
+238, 122182 (2024).
+Acknowledgements
+We sincerely acknowledge the constructive feedback provided by the reviewers, which significantly improved 
+the quality of the manuscript. We also extend our gratitude to colleagues for their valuable discussions and tech-
+nical support during the study. We would like to highlight the substantial contributions of Junxian Li throughout 
+the research and manuscript preparation process. Initially listed as the fifth author, his extensive input during 
+the revisions demonstrated his pivotal role in the conceptual development of the hybrid GATFELPA model, 
+experimental design and execution, and manuscript preparation. His expertise in integrating advanced method-
+ologies, analyzing results, and enhancing coherence was critical to the success of this research. This adjustment 
+in author order, placing Junxian Li as the second author, reflects our commitment to accurately recognizing each 
+contributor’s role and has been agreed upon by all co-authors.
+Author contributions
+Feiyi Tang played a central role in the project by conceptualizing the research idea, designing the methodology, 
+drafting the manuscript, and optimizing the proposed approaches. He led the development of the experimental 
+framework and supervised the project’s overall progress, ensuring its successful completion. Junxian Li signifi-
+cantly contributed to the development of the hybrid GATFELPA model and was instrumental in designing the 
+experiments, benchmarking against state-of-the-art methods, and drafting and revising critical sections of the 
+manuscript. His efforts in coordinating research activities, integrating feedback, and enhancing the experimen-
+tal analysis and manuscript quality were pivotal. Xi Liu focused on data analysis, implementing experiments, and 
+revising the manuscript. Her contributions were vital in refining the results and improving the presentation of 
+the methodology section during the revision process. Chao Chang provided expertise in software development, 
+data visualization, and experimental validation, offering essential feedback on the experimental framework and 
+contributing to data analysis and preprocessing. Lastly, Luyao Teng managed the project administration, secured 
+funding, revised the manuscript, and oversaw resource management. Her oversight ensured the integration of 
+project resources and the alignment of research objectives with the broader goals of the study. Together, the 
+team’s collaborative efforts brought this project to fruition.
+Funding
+This research was funded by the Science and Technology Program of Guangzhou under grants SL2022A04J01236 
+and 2023A04J1729; the Science and Technology Innovation Strategy Special Fund of Guangdong under grant 
+pdjh2024b622; the Guangdong Provincial Higher Education Research Platforms and Projects under grant 
+2024KQNCX232; the Collaborative Innovation Center for Intelligent Educational Technology of Guangzhou 
+under Grant 2023B04J0004; the National Key Research and Development Program of China (Research and 
+Demonstration Application of Key Technologies for Personalized Learning Driven by Educational Big Data) 
+Scientific Reports |         (2025) 15:3952 16| https://doi.org/10.1038/s41598-024-84962-4
+www.nature.com/scientificreports/
+
+--- PDF PAGE 17 ---
+under Grant 2023YFC3341200.
+Declarations
+Competing interests
+The authors declare no competing interests.
+Additional information
+Correspondence and requests for materials should be addressed to L.T.
+Reprints and permissions information is available at www.nature.com/reprints.
+Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and 
+institutional affiliations.
+Open Access  This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 
+4.0 International License, which permits any non-commercial use, sharing, distribution and reproduction in 
+any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide 
+a link to the Creative Commons licence, and indicate if you modified the licensed material. Y ou do not have 
+permission under this licence to share adapted material derived from this article or parts of it. The images or 
+other third party material in this article are included in the article’s Creative Commons licence, unless indicated 
+otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence 
+and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to 
+obtain permission directly from the copyright holder. To view a copy of this licence, visit  h t t p : / / c r e a t i v e c o m m o 
+n s . o r g / l i c e n s e s / b y - n c - n d / 4 . 0 /     .  
+© The Author(s) 2025 
+Scientific Reports |         (2025) 15:3952 17| https://doi.org/10.1038/s41598-024-84962-4
+www.nature.com/scientificreports/

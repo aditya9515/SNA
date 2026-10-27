@@ -1,0 +1,7 @@
+{
+  "remaining_queue": 0,
+  "queue_policy": "all_changed_neighbors",
+  "weight_attribute": "structural_weight",
+  "retain_maximal": true,
+  "support_violation_nodes": []
+}

@@ -1,0 +1,25 @@
+{
+  "dataset_id": "email_eu_core",
+  "source_url": "https://snap.stanford.edu/data/email-Eu-core.html",
+  "graph_hash": "cb4ab6e7ea1e6d1eb57f789f0602716030a6f25e64d69cf73af8e9744ea2a321",
+  "nodes": 1005,
+  "edges": 16064,
+  "source_nodes": 1005,
+  "source_edges": 25571,
+  "source_directed": true,
+  "source_self_loops_removed": 642,
+  "connected_components": 20,
+  "isolates": 19,
+  "density": 0.031840796019900496,
+  "mean_degree": 31.9681592039801,
+  "max_degree": 345,
+  "reference_groups": 42,
+  "label_coverage": 1.0,
+  "policy": "Undirected OR-symmetrisation; deduplicate; remove loops; retain every source node; discard source weights for common topology",
+  "raw_sha256": {
+    "department-labels.txt.gz": "e5abe5b4581a480032a63adcf2576c161785f45692642c6ebb0b1276f0f33669",
+    "email-Eu-core.txt.gz": "4b47acdb80197b085fe63c819c357ae488131ee904ed93d1b219a68b0f9e245f"
+  },
+  "prepared_utc": "2026-10-26T14:36:03.328407+00:00",
+  "reference_label_source": "SNAP department-labels file; departments are proxy groups, not unique structural truth"
+}

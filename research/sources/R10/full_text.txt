@@ -1,0 +1,833 @@
+--- PDF PAGE 1 ---
+Accepted: October 8, 2025
+Published online: October 28, 2025
+Annales Mathematicae et Informaticae
+61 (2025) pp. 229–247
+DOI:10.33039/ami.2025.10.012
+URL:https://ami.uni-eszterhazy.hu
+Betweenness-driven overlapping label
+propagation community detection∗
+Sylvert Prian Tahaleaab, Miklós Krészcd
+aDoctoral School of Computer Science, University of Szeged, Hungary
+sylvert@inf.u-szeged.hu
+bDepartment of Informatics, Universitas Pembangunan Nasional Veteran Yogyakarta,
+Indonesia
+cDepartment of Applied Informatics, University of Szeged, Bolodgasszony sgt. 6, H-6725
+Szeged, Hungary
+dInnoRenew CoE, UP IAM and UP FAMNIT, University of Primorska, Titov trg 4,
+6000 Koper, Slovenia
+miklos.kresz@innorenew.eu
+Abstract.Community detection holds significant value in discovering hid-
+den structures in complex networks. In this paper, we propose a betweenness-
+driven community detection based on the label propagation algorithm. First,
+at the multiple labels’ assignment phase, we detect communities using label
+propagation and apply labels for the nodes using the betweenness and degree
+centrality as references. Second, we refine the modularity and stability using
+several configurations, such as global modularity and stability pruning, to
+avoid nodes that have not changed for several iterations. This algorithm was
+tested with the most common datasets, such as Zachary’s Karate Club Net-
+work, Polbooks, Football, and 12 LFR synthetic datasets, which resulted in
+improved scores on modularity, overlapping normalised mutual information,
+omega index, generalized F1-score, and extended various pieces of informa-
+tion.
+Keywords:network, graph, overlapping, community detection, label propaga-
+tion algorithm
+∗The research was supported by the BioLOG project: the second author is grateful for the
+support of the National Centre of Science (NCN) through grant DEC-2020/39/I/HS4/03533, the
+Slovenian Research and Innovation Agency (ARIS) through grant N1-0223 and the Austrian Sci-
+ence Fund (FWF) through grant I 5443-N. This work is supported by the ARIS research program
+P1-0404 and by the research program CogniCom (0013103) at the University of Primorska.
+
+--- PDF PAGE 2 ---
+Annal.Math.etInf.S. P. Tahalea, M. Krész
+1. Introduction
+Network analysis is implemented and used in various disciplines to represent their
+complex interactions, such as social sciences, computer sciences, biology, and ma-
+terials science. Networks consisting of nodes with edges connecting them encode
+information through their structural characteristics; one of the most popular re-
+search areas is the study of community structures. While it has no formal defini-
+tion, a community can be considered a densely connected subgraph of a network,
+which means that nodes within the community have strong relationships but are
+sparsely connected to the rest of the network. Generally, there are two types of
+communities: non-overlapping or disjoint communities and overlapping commu-
+nities. The non-overlapping community detection separated the nodes based on
+their membership, where each node only belongs to exactly one community. Mean-
+while, the overlapping communities consider the nodes that belong to one or more
+communities.
+Community detection is considered an important task because it can uncover
+the hidden structure of a complex network. Most community detection algorithms
+have been developed to solve the non-overlapping community detection problem,
+but some algorithms work well to solve both non-overlapping and overlapping com-
+munity detection problems [4]. Many approaches have been proposed to solve
+the community detection problems, such as clique percolation approach [23], label
+propagation [25], non-negative matrix factorization (NMF) [28], fuzzy set theory
+[8], evolutionary algorithms [24], and even the statistical models [9]. The Newman-
+Girvan modularity measurements have become one of the most popular methods
+to measure the density of communities within the network [21], since they provide
+an objective way to evaluate the communities’ quality. This measurement indi-
+cates that nodes are more closely connected to their community compared to other
+nodes in the network. A modularity score near zero indicates that there is no real
+community structure, while a score near one means the communities are dense and
+well-structured. The label propagation algorithm (LPA) approach has received a
+lot of interest because of its simplicity and scalability [7]. As an extension of its
+original non-overlapping version [25], it consists of simple steps for the overlapping
+community detection [8], such as 1) label every node with its unique label; 2) label
+the current node based on its neighbours’ labels; 3) propagate for all the nodes in
+the network; 4) compare the label of each node in the current iteration with the
+previous iteration; and finally 5) labels indicate the communities for each node (a
+node may have multiple labels). The weighting system is usually applied in stage
+3. The iteration is terminated at stage 4 if convergence occurs; otherwise, another
+iteration is executed.
+There are several notable overlapping community algorithms based on label
+propagation. In 2010, Gregory [8] designed a specific algorithm called COPRA
+(Community Overlap Propagation Algorithm) to allow nodes to hold multiple la-
+bels simultaneously using the belonging coefficient as a degree of membership.
+Later, the dynamic process where each node acts as a speaker and a listener was
+230
+
+--- PDF PAGE 3 ---
+Annal.Math.etInf.Betweenness-driven overlapping label propagation . . .
+introduced as SLPA [29], which identified both the number and the strength of
+each node’s community affiliation. Another approach, which combined with LPA
+is a local spectral method called LEMON [15]: a sparse vector is obtained by min-
+imising theℓ1norm over a local spectral subspace with seed constraints, which
+ensures the seed nodes to be included and highlights additional nodes to include
+in the community.
+In 2021, Attal et. al. [1] introduced a method to find overlapping community
+detection using pre-computed disjoint communities. This algorithm, leveraging
+density and clustering coefficient as belonging function, compares to closeness and
+betweenness centrality as average node measures, defining a node’s memberships.
+These results show that communities with high density and clustering coefficient
+performed better than closeness and betweenness centrality measures. In the same
+year, Li and Sun [14] introduced a combination of local expansion and label prop-
+agation (LELP), which uses local expansion to generate some immature communi-
+ties, prunes the network, and uses LPA to obtain a stable network.
+In2022, densitybased-labelpropagationalgorithm(D-LPA)[31]wasdeveloped,
+combining the density peak clustering with traditional LPA to improve the stability
+and accuracy of community assignments. The vector-label propagation algorithm
+(vLPA) was also introduced in this year [3], where gradient descent was utilised to
+improve the modularity. This approach retains weak structural information, but
+obtains better performance when the community structure is weak. The influence-
+based COPRA approach introduced as INF-COPRA [30], is an algorithm that
+ranks the influence of nodes and labels, thereby improving the extended modularity
+(EQ) and normalised mutual information. One of the latest expansions of LPA was
+thedegreeandbetweenness-basedlabelpropagation(DBLPA)[22], whichcombines
+the degree and betweenness centrality to provide the core nodes in layer-by-layer
+LPA [34].
+Label propagation algorithms have a fast runtime but have strong randomness
+and weak robustness causing difficulties in obtaining effective community detection
+results. The expansion of the label propagation algorithms conducted with several
+approaches, such as the multistep greedy, to increase modularity, but sacrifices the
+fast-running time [17]. There is also a kernel label approach proposed to reduce
+the complexity, but at the same time improve the randomness of the algorithm
+[16]. Meanwhile, others proposed the accelerated modularity gain by analysing
+Newman’s modularity function [33].
+Overlapping community detection is important because real-world networks
+rarely consist of cleanly separated groups. Detecting overlapping communities can
+lead to the nature of multiple roles of nodes, provide more accurate prediction of
+network behaviour, capture phenomena such as redundancy and robustness in com-
+plex systems, and define the characteristics that strengthen the interpretability and
+predictive utility of community detection methods. Modularity is one of the most
+widely accepted quality functions in community detection because it measures how
+well a given community separates dense intra-community connections from sparse
+inter-community connections. However, overlapping communities often underes-
+231
+
+--- PDF PAGE 4 ---
+Annal.Math.etInf.S. P. Tahalea, M. Krész
+timates the quality of the community structure because nodes can contribute to
+multiple groups simultaneously. If the overlapping assignments are not refined,
+the modularity may remain low, indicating communities are not cohesive or not
+well-defined. Improving modularity in overlapping community detection ensures
+the structural density and avoids the risk of generating fragmented communities.
+Betweenness centrality quantifies the shortest paths between others, showing a
+strong indicator of a boundary in the networks. In overlapping community detec-
+tion, betweenness nodes are precisely where community memberships are likely to
+overlap since they act as the bridge across different groups of nodes in the network.
+This betweenness-driven approach leverages the inverse betweenness, causing these
+nodes to retain multiple memberships in the overlap assignment phase. This ap-
+proach utilises the balance between degree centrality capturing the local influences
+and betweenness centrality, which highlights global structure.
+This paper proposes a novel overlapping community detection algorithm utilis-
+ing the fast propagation through the network of LPA combined with the nature of
+the betweenness centrality score of a node. This algorithm is split into two phases:
+multi-assignment label propagation and modularity refinement. In the first phase,
+the algorithm will quickly build an overlapping community structure using LPA
+with betweenness as its voting mechanism to decide the memberships of each node.
+This allows strong local leaders to influence community growth while boundary
+nodes exert more measured influence. In the second phase, modularity refinement
+is executed using Newman’s modularity [21] with temporal projections to refine the
+modularity of the communities within the network. Finally, overlapping communi-
+ties are defined by assigning the nodes to all communities where their membership
+strength exceeds the threshold. In this proposed algorithm, several adaptation
+parameters are used to maximise the modularity, such as top-kfiltering to make
+sure that the nodes can holdkmaximum labels as their possible communities, and
+minimum gain as a threshold when maximising the modularity.
+The main contributions of this paper are as follows:
+1. Balancing high-speed and high-quality communities, addressing the weak-
+nesses of the classic label propagation algorithm.
+2. Flexible filtering strategies (such as Top-K filtering, minimum gain threshold,
+and stability pruning) which lead to an increase in the quality of communities
+produced.
+3. Utilising the nature of betweenness nodes to define the overlapping nodes.
+The remainder of the paper is organised as follows. Section 2 explains the method-
+ology, data, and evaluation techniques used in this study. Section 3 presents the
+main results, with tables highlighting the main findings. Section 4 concludes the
+contribution, takeaways, and future research.
+232
+
+--- PDF PAGE 5 ---
+Annal.Math.etInf.Betweenness-driven overlapping label propagation . . .
+2. Methodology
+TheBetweenness-DrivenLabelPropagationAlgorithm(BD-LPA)isanoverlapping
+community detection method that combines local label propagation with a global
+modularity-based refinement. The high-betweenness nodes often sit at community
+boundaries and influence how strongly a node is pulled by its neighbours’ labels.
+By seeding each node with a unique label and weighting those labels according to
+both how often they appear in the neighbourhood and how central their owners
+are, BD-LPA builds a soft membership vector for every node. This vector encodes
+the node’s membership towards multiple communities, allowing for overlapping
+structures. The algorithm proceeds in two main phases—first, a fast, distributed
+voting scheme that spreads labels with influence proportional to neighbour degree
+and inverse to neighbour betweenness, and then a slower, global refinement that
+uses modularity gains to reinforce coherent groupings. This proposed method is
+split into two phases, namely the multi-assignment label propagation phase and
+the global modularity refinement phase.
+2.1. Degree and betweenness centrality
+Degree centrality measures the number of edges connected to a node [5]. This
+centrality shows the position of a node in the networks based on its connections
+and can be measured as follows. For a simple undirected graphG= (V,E), the
+degree centralityC d of nodevis
+CD(v) = deg(v),
+wheredeg(v)is the degree of nodev.
+While degree centrality measures the node’s centrality using the direct connec-
+tion to the node, betweenness centrality measures the node’s centrality based on
+how often the node lies on the shortest path between other nodes [6]. Betweenness
+centralityC b of a nodevcan be measured as follows. Letσ xy be the number of
+shortest path between nodesxandy, andσ xy(v)the number of paths that pass
+through nodev, withv̸=x̸=y. The betweenness centrality ofvis
+CB(v) =
+∑
+v̸=x̸=y
+σxy(v)
+σxy
+.
+The nature of a node with a high betweenness value is becoming a hub for the
+network, meaning that they are node with a high possibility of having multiple
+community memberships. On the contrary, nodes with low betweenness are more
+likely to have single community membership but not necessarily rely only on their
+betweenness centrality value. Thus, in this study, we propose to combine the
+use of degree and betweenness centrality as the community membership voting
+mechanism.
+233
+
+--- PDF PAGE 6 ---
+Annal.Math.etInf.S. P. Tahalea, M. Krész
+2.2. Multi-assignment label propagation
+In Phase 1, each node maintains a weight vector over candidate community labels.
+In each iteration, nodes are visited in random order and vote for labels: each
+neighbour contributes to the vote for its own dominant label in proportion to
+its degree divided by one plus its betweenness centrality. The candidate labels
+with the highest votes are then added to the node’s weight vector with a fixed
+gain factor, and the vector is renormalised as probabilities, retaining only the
+top L labels. Over multiple fast iterations, this process diffuses label influence
+through the graph, enabling nodes at the fringes of communities to accumulate
+membership probabilities in several nearby groups. Since the voting weight uses
+degree and penalises high-betweenness nodes, labels spread more readily within
+densely connected regions while respecting bottlenecks. The node membership
+voting mechanism can be computed as follows.
+vote[ℓ∗u] += deg(u)1 + btw(u),
+whereℓ ∗u is the dominant label of neighboru,deg(u)is the degree of nodeu,
+btw(u)is the betweenness centrality of nodeu, andvote[ℓ∗u]is the cumulative vote
+weight for label received by nodeufrom its neighbors. The algorithm for phase 1
+is presented in Algorithm 1.
+2.3. Modularity refinement
+In Phase 2, modularity refinement measurement utilises Newmann’s modularity
+with temporary projection or hard mapping[26, 27]. This shifts the measurement
+from local diffusion to global optimisation by temporarily hard-assigning each node
+to its highest-weight label and computing the resulting modularity. It then at-
+tempts to improve modularity by considering, for each node in random order, re-
+assigning it to one of its neighbours’ labels if it results in a modularity gain above
+a small threshold. Whenever a better community label is found, the node’s weight
+vector is reset to that single label before moving on. Iterations continue until no
+single-node swap can further increase modularity. Crucially, these hard-assignment
+trials only guide the search; at the end of refinement, the algorithm reverts to the
+soft weight vectors and applies thresholds to produce overlapping communities,
+preserving multi-membership while ensuring that each switch meaningfully boosts
+global cohesion. The algorithm for phase 2 is presented in Algorithm 2, and the
+modularity measurement is conducted as follows.
+1. After phase-1, each nodevhas membership weightw v(ℓ)
+2. Temporay projection (hard mapping) performed asc∗i = arg maxℓwi(ℓ)
+3. Compute the modularity using Newman’s modularity [21] for the temporary
+hard mapping as follows.
+Qproj = 12m∑[Aijkikj2m ]δ(c∗i,c∗j),(2.1)
+234
+
+--- PDF PAGE 7 ---
+Annal.Math.etInf.Betweenness-driven overlapping label propagation . . .
+Algorithm 1Phase 1: Multi-Assignment Label Propagation
+Require:G= (V,E)▷undirected graph
+Require:T f ▷fast propagation iterations
+Require:k ▷top-kvotes per node
+Require:L max ▷max labels per node
+Require:η ▷vote gain factor
+Ensure:{w v}▷soft label weights
+1:// Initialisation
+2:foreachv∈Vdo
+3:assign unique labelℓ v
+4:w v←{ℓ v↦→1.0}
+5:end for
+6:// Propagation
+7:fort= 1toT f do
+8:Shuffle(V)
+9:foreachv∈Vdo
+10:vote←{}
+11:foreachu∈N(v)do
+12:ℓ ∗u←arg max ℓwu[ℓ]
+13:vote[ℓ ∗u] += deg(u)1 + btw(u)
+14:end for
+15:T←top-klabels byvote
+16:foreachℓ∈Tdo
+17:w v[ℓ] +=ηvote[ℓ]
+18:end for
+19:w v←TruncatedSoftmax(w v,L max)
+20:end for
+21:end for
+whereA ij is actual adjacency between nodeiandj;k i,k j are the degrees
+of nodeiandj;mis the total number of edges; andδ(c ∗i,c∗ j)shows the
+position of nodeiandjon their temporary mapping, 1 means both nodes
+are in the same community, and 0 otherwise.
+Here is an example of the approach.
+1. Graph:GwithV={A,B,C,D}, a 4-cycle,m= 4
+2. Communities:C 1 ={A,B,C},C 2 ={A,C,D}
+3. Assumed that memberships after phase-1:
+•A:C 1 : 0.7,C 2 : 0.3
+•B:C 1 : 0.6,C 2 : 0.4
+•C:C 1 : 0.2,C 2 : 0.8
+•D:C 1 : 0.1,C 2 : 0.9
+235
+
+--- PDF PAGE 8 ---
+Annal.Math.etInf.S. P. Tahalea, M. Krész
+4. Temporal projection:
+•A↦→C 1
+•B↦→C 1
+•C↦→C 2
+•D↦→C 2
+•Projected communityC ∗1 ={A,B,C},C ∗2 ={D}
+5. Using equation (2.1)Qproj = 0.08
+2.4. Evaluation
+This proposed algorithm was evaluated using several standard metrics that are
+widely adopted, such as modularity, overlapping normalized mutual information
+(ONMI), omega index, generalized F1-score, and extended variation of informa-
+tion (extended VI) as the proper evaluation for overlapping community detection
+[7, 11]. Modularity introduced by Newman and Girvan [21] to quantify the inter-
+nal structure of the community, while ONMI measures the similarity between the
+results and the ground truth [18] as follows:
+NMI max = I(X:Y)max(H(X),H(Y)) ,
+whereI(X:Y)= 12[H(X)−H(X|Y)+H(Y)−H(X|Y)]is the mutual information
+andH(X|Y) = ∑i∈1,...KX is the total information.
+To evaluate the accuracy, imbalance community, and discrepancy in shared
+information, the omega index was used [20] as follows.
+Ω(C1,C 2) = ou(C1,C 2)−o e(C1,C 2)1−o e(C1,C 2) ,
+whereo u(C1,C 2)is the fraction of pairs that occur in the same number of commu-
+nities in both communities, andoe(C1,C 2)is the expected fraction under random
+assignment.
+The generalized F1-score [32] is also used to measure the best-matching com-
+munity produced by the algorithm compared with the ground truth, which can be
+measured as follows.
+1
+2
+
+ 1
+|C∗|
+∑
+Ci∈C∗
+F1(C i, ˆCg(i)) + 1| ˆC| ∑ˆCi∈ ˆCF1(C g′(i), ˆCi)
+
+,
+where the best matchinggandg ′ is defined asg(i) = arg max jF1(C i, ˆCj)and
+g′(i) = arg maxjF1(C j, ˆCi).
+236
+
+--- PDF PAGE 9 ---
+Annal.Math.etInf.Betweenness-driven overlapping label propagation . . .
+Algorithm 2Phase 2: Modularity Refinement
+Require:G= (V,E)▷undirected graph
+Require:{w v}v∈V ▷weight vectors from Phase 1
+Require:T r ▷refinement iterations
+Require:ε ▷modularity-gain threshold
+Ensure:{w v}v∈V ▷refined weight vectors
+1:functionHardMap(v)
+2:returnarg max ℓwv[ℓ]
+3:end function
+4:functionBuildCommunities
+5:C←{}▷map label→node list
+6:foreachv∈Vdo
+7:ℓ←HardMap(v)
+8:appendvtoC[ℓ]
+9:end for
+10:returnlist of communities inC
+11:end function
+12:Q←modularity
+(
+G,BuildCommunities
+)
+13:fort←1toT r do
+14:changed←false;Shuffle(V)
+15:foreachv∈Vdo
+16:c 0←HardMap(v)
+17:Cand←{HardMap(u)|u∈N(v)}\{c 0}
+18:best,∆ best←c 0,0
+19:foreachℓ∈Canddo
+20:savew oldv ←w v
+21:w v←{ℓ↦→1.0}
+22:Q ′←modularity(G,BuildCommunities)
+23:∆←Q ′−Q
+24:if∆>εand∆>∆ best then
+25:best,∆ best←ℓ,∆
+26:end if
+27:restorew v←w oldv
+28:end for
+29:ifbest̸=c 0 then
+30:w v←{best↦→1.0}
+31:Q←Q+ ∆ best
+32:changed←true
+33:end if
+34:end for
+35:ifnot changedthen
+36:break
+37:end if
+38:end for
+Another evaluation measurement used was the extended VI [19] as follows.
+VI(X,Y) =H(X|Y) +H(Y|X),
+237
+
+--- PDF PAGE 10 ---
+Annal.Math.etInf.S. P. Tahalea, M. Krész
+whereH(X|Y)is the conditional entropy of communityXgiven communityYand
+vice versa. Conditional entropy measures the certainty of a community assignment
+given knowledge of the other communities. It captures the average amount of extra
+information to describe the communities. A lower conditional entropy implies that
+knowing one community almost fully explains the other (strong agreement), while
+a higher value means the communities disagree more, reflecting greater divergence
+in how overlaps are assigned.
+The datasets used in this evaluation are Zachary’s Karate Club Network [5],
+Football [5], Polbooks [10], and synthetic datasets generated using the LFR frame-
+work [12].
+3. Experimental results and analysis
+The proposed algorithms were benchmarked using four standard metrics, such as
+modularity, ONMI, Omega Index, Generalized F1-score and Extended VI, over the
+four datasets mentioned before. The results were compared to three overlapping
+community detection algorithms such as COPRA [8], SLPA [29], and Motif-LPA
+[13], to evaluate their performance to the LPA-based algorithm.
+•COPRA: Expansion of traditional LPA using membership coefficients to
+allow nodes to belong to multiple communities.
+•SLPA: Dynamic model of LPA where nodes act as speakers and listeners,
+allowing nodes to remember the community label and become its member.
+•Motif-LPA: Introducing a motif-based approach (recurring structural pat-
+terns) and capturing high-order connectivity to allow nodes to become mem-
+bers of more than one community
+3.1. Datasets
+Three real-world datasets are commonly used in community detection benchmark-
+ing, utilised in this research. The Zachary’s Karate Club network describes rela-
+tionships between club members, which are divided into two communities. The
+Football dataset was created from the American College Football League, where
+nodes represent the football team and edges represent the game played between
+them. The Polbooks network was created based on the interaction between readers
+of American politics books. Alongside the real-world datasets, we generated 12 syn-
+thetic datasets using the LFR model [12] with different settings. The LFR model
+is widely adopted in community detection research because it produces networks
+with realistic structural features (heterogeneous degree distributions and commu-
+nity sizes) while allowing precise control over the embedded community structure.
+Unlike real-world networks, where communities are inferred from contextual
+meaning, in LFR networks, communities are explicitly defined by the generation
+process, making them suitable for controlled benchmarking. Each synthetic dataset
+238
+
+--- PDF PAGE 11 ---
+Annal.Math.etInf.Betweenness-driven overlapping label propagation . . .
+in Table 1 is characterised by:n(Nodes) and Edges: the size and connectivity
+of the generated network;c(Communities): the number of planted communities
+generated by the model;k(Average degree): the average number of edges per
+node;µ(Mixing parameter): the proportion of edges that connect a node to nodes
+outside its community. A lowµ(close to 0) indicates well-separated communities,
+while a higherµimplies stronger inter-community mixing and weaker community
+structure; on (Overlapping nodes): the number of nodes that belong to more than
+one community; om (Overlapping memberships): the number of communities each
+overlapping node belongs to. For example, om = 2 indicates that overlapping nodes
+belong to exactly two communities, while om = 3 allows nodes to be shared across
+three communities.
+The parameterisation across the LFR datasets was chosen to cover different
+scenarios of network size from 1000 to 10000 nodes, degree distributions, mixing
+levels, and varying degrees of community overlap. This diversity ensures the algo-
+rithm’s robustness under a wide range of structural complexities and community
+structures. Table 1 provides the summary of the datasets, wherecis the number of
+communities,kis the average degree,µis the mixing parameter,onis overlapping
+nodes, andomis overlapping memberships.
+T able 1.Comparative metadata of benchmark datasets.
+Dataset Nodes Edgesc k µon om
+Karate 34 78 2 - - - -
+Football 115 613 3 - - - -
+Polbooks 105 441 12 - - - -
+LFR1 1000 10455 44 20.91 0.10 100 0
+LFR2 1000 12555 35 25.11 0.30 100 2
+LFR3 1000 6003 27 12.01 0.15 100 3
+LFR4 2000 24555 40 24.55 0.20 200 0
+LFR5 2000 31461 39 31.46 0.30 200 2
+LFR6 2000 15495 32 15.49 0.15 200 3
+LFR7 5000 70518 57 28.21 0.10 500 0
+LFR8 5000 84899 61 33.96 0.25 500 2
+LFR9 5000 93743 56 37.50 0.30 500 3
+LFR10 10000 113290 61 22.66 0.10 1000 0
+LFR11 10000 120047 75 24.01 0.20 1000 2
+LFR12 10000 190440 84 38.09 0.25 1000 3
+3.2. Parameter settings
+The proposed algorithm is an adaptive algorithm by nature, meaning that the
+parameters can be tuned to achieve good community detection results. The config-
+ured parameters are the number of fast iterations in the first phase, the number of
+239
+
+--- PDF PAGE 12 ---
+Annal.Math.etInf.S. P. Tahalea, M. Krész
+refinement iterations, top-klabels, max labels, overlapping threshold, gain thresh-
+old, and gain factor. The fast iteration converged well within 8 iterations, while
+the modularity can be stabilised in 6 iterations. The top-3 neighbour labels is
+a good balance between noise and diversity, and limiting 3 labels per node helps
+avoid fragmentation. The low number ofτ,ε, andηis to control the overlapping
+sets, prevent overfitting, and ensure effective propagation speed. The best average
+setting for the dataset used in this experiment is presented in Table 2.
+T able 2.Parameter settings.
+Name Symbol Value Function/Role
+Fast iterationsT f 8 Number of label-voting passes
+Refinement itera-
+tions
+Tr 6 Number of modularity-refinement
+Top-klabelsk3 Number of neighbor can be considered
+Max labelsL max 3 Number of labels a node can hold
+Overlapping
+threshold
+τ0.25 Weight threshold to allow a label into
+overlapping set
+Gain thresholdε1e-4 Minimum modularity gain to allow a
+node to change label
+Gain factorη0.6 Scaling factor for the neighboring votes
+Random seed - 75 Ensure the reproducibility
+3.3. Modularity evaluation
+The modularity measurement is a common and widely used method to evaluate
+community detection algorithms to show the density or sparsity of the results. The
+larger value indicates a densely connected structure within the results, but it does
+not indicate the accuracy of the community detection. The results presented in
+Table 3 show that compared to other algorithms, BD-LPA performed well and
+almost achieved the highest score for most datasets, with a peak score of 0.853
+in LFR12. Motif-LPA performs competitively in synthetic datasets but struggles
+in real datasets, while SLPA and COPRA show moderate results. The average
+modularity across all datasets shows the superiority of BD-LPA with an average
+score of 0.647. This indicates BD-LPA is not only consistent but also adaptable to
+different network structures.
+3.4. ONMI evaluation
+The ONMI evaluation assesses the results of overlapping community detection al-
+gorithm against the ground truth of the datasets. The ONMI results of BD-LPA
+achieve the highest score on real-world datasets such as Karate, Football, and Pol-
+books. The results presented in Table 4 show that BD-LPA performs well for most
+240
+
+--- PDF PAGE 13 ---
+Annal.Math.etInf.Betweenness-driven overlapping label propagation . . .
+T able 3.Modularity score obtained from the datasets.
+Dataset SLPA COPRA Motif-LPA BD-LPA
+Karate 0.4190.4200.226 0.419
+Football 0.520 0.530 0.5570.571
+Polbooks 0.370 0.380 0.4150.457
+LFR1.gml 0.803 0.802 0.8020.897
+LFR2.gml 0.000 0.000 0.4940.580
+LFR3.gml 0.000 0.000 0.7130.718
+LFR4.gml 0.501 0.000 0.5090.519
+LFR5.gml 0.665 0.6670.6680.662
+LFR6.gml 0.000 0.000 0.7360.749
+LFR7.gml 0.529 0.000 0.5320.536
+LFR8.gml 0.610 0.595 0.6100.624
+LFR9.gml 0.827 0.8110.8290.812
+LFR10.gml 0.000 0.000 0.6130.621
+LFR11.gml 0.000 0.0000.689 0.689
+LFR12.gml 0.000 0.000 0.8400.853
+Average0.349 0.280 0.6160.647
+datasets, competing with Motif-LPA which performs strongly on synthetic datasets
+but shows poorly in real-world datasets. Considering its average performance, BD-
+LPA is superior to other algorithms with an average of 0.922 ONMI scores. This
+indicates that BD-LPA not only finds community with high modularity (as seen
+in Table 3) but also closely aligns its detected structure with ground truth across
+datasets.
+3.5. Omega index
+The omega index is specifically designed to handle overlapping community de-
+tection as the extension of the adjusted rand index (ARI) [2, 20]. This metric
+measures the similarity between the node memberships in predicted communities
+and the ground-truth communities. The range is from−1to1, where 1 indicates
+perfect similarity, 0 means random communities, and−1means that pairwise co-
+membership assignments are as discordant as possible relative to chance. Table 5
+presents the omega index score from the datasets. BD-LPA performed well for the
+real-world datasets and almost all the synthetic datasets. BD-LPA consistently
+achieves high scores across datasets, notably reaching the highest scores for LFR6,
+LFR7, LFR8, LFR9, and LFR11. Motif-LPA performs competitively and reaches
+high scores in the synthetic dataset; however, it performed poorly on real-world
+datasets. Averagingacrossdatasets, BD-LPAattainsthehighestmeanomegaindex
+of 0.930, indicating its ability in overlap-sensitive agreement metrics and showing
+its reliability across scenarios.
+241
+
+--- PDF PAGE 14 ---
+Annal.Math.etInf.S. P. Tahalea, M. Krész
+T able 4.ONMI score.
+Dataset SLPA COPRA Motif-LPA BD-LPA
+Karate 0.334 0.048 0.1780.837
+Football 0.283 0.283 0.3390.771
+Polbooks 0.296 0.429 0.4440.569
+LFR1.gml 0.892 0.9461.0000.947
+LFR2.gml 0.649 0.838 0.9800.986
+LFR3.gml 0.725 0.6240.9900.981
+LFR4.gml 0.743 0.8760.9980.929
+LFR5.gml 0.799 0.8601.0000.939
+LFR6.gml 0.750 0.672 0.9800.999
+LFR7.gml 0.780 0.8650.9980.987
+LFR8.gml 0.805 0.8590.9990.983
+LFR9.gml 0.857 0.8261.0000.950
+LFR10.gml 0.806 0.8921.0000.981
+LFR11.gml 0.777 0.681 0.9901.000
+LFR12.gml 0.814 0.7481.0000.965
+Average0.687 0.696 0.8600.922
+T able 5.Omega index score.
+Dataset SLPA COPRA Motif-LPA BD-LPA
+Karate 0.210 0.048 0.2470.882
+Football 0.671 0.080 0.5360.778
+Polbooks 0.5460.7000.568 0.637
+LFR1.gml 0.954 0.4251.0000.977
+LFR2.gml 0.612 -0.0330.9890.973
+LFR3.gml 0.790 0.1550.9970.991
+LFR4.gml 0.760 -0.0240.9980.936
+LFR5.gml 0.905 0.2441.0000.964
+LFR6.gml 0.855 0.166 0.9851.000
+LFR7.gml 0.905 -0.022 0.9981.000
+LFR8.gml 0.940 -0.0031.000 1.000
+LFR9.gml 0.972 0.2871.000 1.000
+LFR10.gml 0.957 0.0021.0000.900
+LFR11.gml 0.946 0.184 0.9911.000
+LFR12.gml 0.972 0.2811.0000.957
+Average0.800 0.166 0.8870.930
+242
+
+--- PDF PAGE 15 ---
+Annal.Math.etInf.Betweenness-driven overlapping label propagation . . .
+3.6. Generalized F1-score
+The generalized F1-score compares the similarity between the predicted community
+with the ground-truth community. This metric focuses on quality rather than the
+structure of the compared communities. Table 6 presents the results of generalized
+F1-score across the datasets and shows that BD-LPA consistently deliver high
+scores across the datasets and reaches perfect alignment in LFR6. Its performance
+in real-world datasets is mixed, with an exceptional score of 0.971 in the Karate
+dataset but lower in other datasets; however, it performed exceptionally well in
+structured synthetic datasets. Motif-LPA also performed well in most datasets
+and reached perfect alignment in several cases. In terms of averages, BD-LPA
+leads with a mean score of 0.899, followed by Motif-LPA (0.837), COPRA (0.803),
+and SLPA (0.599). This indicates BD-LPA as the most accurate and balanced
+method across datasets, maintaining its strong precision-recall trade-offs.
+T able 6.Generalized F1-score.
+Dataset SLPA Copra Motif-LPA BD-LPA
+Karate 0.609 0.600 0.2780.971
+Football0.6160.215 0.277 0.489
+Polbooks 0.4560.7260.047 0.596
+LFR1.gml 0.688 0.9761.0000.772
+LFR2.gml 0.541 0.9240.9930.923
+LFR3.gml 0.570 0.765 0.9830.984
+LFR4.gml 0.554 0.9340.9990.942
+LFR5.gml 0.572 0.9351.0000.982
+LFR6.gml 0.543 0.809 0.9851.000
+LFR7.gml 0.536 0.9480.9990.985
+LFR8.gml 0.548 0.9520.9990.985
+LFR9.gml 0.563 0.9061.0000.983
+LFR10.gml 0.531 0.9511.0000.900
+LFR11.gml 0.524 0.7660.994 0.994
+LFR12.gml 0.532 0.6361.0000.985
+Average0.559 0.803 0.8370.899
+3.7. Extended variation of information
+This metric quantifies the amount of information lost and gained when the nodes
+move from one community to another. The extended VI score ranges from 0
+upwards, where 0 means identical communities, while the larger value indicates
+the dissimilarity between predicted communities and the ground-truth. Table 7
+presents the extended VI across the benchmark datasets. BD-LPA has the best
+extended VI score, indicating there is no discrepancy between its detected com-
+243
+
+--- PDF PAGE 16 ---
+Annal.Math.etInf.S. P. Tahalea, M. Krész
+munities and ground truth. The average score shows that BD-LPA is far superior
+to other algorithms, indicating its precision and consistency in producing ground-
+truth communities across diverse datasets.
+T able 7.Extended VI score.
+Dataset SLPA COPRA Motif-LPA BD-LPA
+Karate 1.000 1.252 1.0000.306
+Football 1.000 3.276 1.0000
+Polbooks 1.000 0.954 1.0000.364
+LFR1.gml 0.008 0.0120.000 0.000
+LFR2.gml 0.0413 0.0431 0.0040.000
+LFR3.gml 0.028 0.125 0.0030.000
+LFR4.gml 0.018 0.0290.000 0.000
+LFR5.gml 0.012 0.0370.000 0.000
+LFR6.gml 0.016 0.111 0.0050.000
+LFR7.gml 0.007 0.0240.000 0.000
+LFR8.gml 0.005 0.0240.000 0.000
+LFR9.gml 0.004 0.0330.000 0.000
+LFR10.gml 0.003 0.0140.000 0.000
+LFR11.gml 0.004 0.048 0.0010.000
+LFR12.gml 0.003 0.0260.000 0.000
+Average0.210 0.401 0.2000.045
+4. Conclusion and future research
+In this paper, we propose an overlapping community detection method based on a
+label propagation algorithm (LPA) and betweenness centrality. In the presence of
+numerous communities, nodes that exhibit high betweenness are prospective over-
+lapping nodes, which may lead to a reduced membership score within a community.
+Multilabel assignment are quickly applied to nodes using label propagation, and
+using the inverse betweenness as the weight for community assignment. The mod-
+ularity refinement phase uses the detected communities as the base community to
+be evaluated with the modularity measurement. If the modularity of the node
+exceeds the threshold, the designation will be altered.
+The utilisation of betweenness centrality as the voting mechanism provides a
+simple computation yet better structure for the proposed communities. The use of
+betweenness suppresses label flow across communities, resulting in higher modular-
+ity. This avoids false overlapping memberships since nodes with low betweenness
+are most likely to become a single community member node, thereby affecting the
+label purity, and improving ONMI scores. The limitation of a high betweenness
+score also contributes to pairwise consistency in co-membership across all pairs of
+244
+
+--- PDF PAGE 17 ---
+Annal.Math.etInf.Betweenness-driven overlapping label propagation . . .
+nodes. Betweenness also minimises label diffusion, which leads to reducing the
+label entropy for better performance.
+Across evaluation metrics such as Modularity, ONMI, Omega Index, General-
+ized F1-score, and Extended VI, BD-LPA consistently performs well. It produces
+highly accurate and robust community structures compared to the ground truth,
+optimally balancing precision and recall. This enables effective and accurate iden-
+tification of overlapping communities without sacrificing detection sensitivity while
+minimising information loss between detected and actual community structures.
+This study used parameter settings that were adjusted for all datasets and pro-
+duced good results across all evaluations. For specific implementation tasks, such
+as biological networks, social networks, or communication systems, addition pa-
+rameter settings may need to be adjusted to optimise community detection tasks
+achieve better results. Overall, these results suggest that this approach is particu-
+larly powerful in enhancing community detection quality for structured networks,
+although further refinements could improve accuracy on datasets with ambiguous
+or noisy metadata.
+Future work on this algorithm could focus on three key areas. First,real-world
+network adaptationshould be conducted, as performance on irregular graphs
+suggests potential sensitivity to noisy or incomplete structures. Second,the scal-
+ability and efficiencyneed to be explored for handling massive networks with
+millions of nodes potentially through parallelised or distributed implementation.
+Third,dynamic and temporal network extensionoffers a promising direction
+for the algorithm to track evolving overlapping communities over time, which is
+potentially useful for applications in social media, biological networks, and commu-
+nication systems. Additionally, integration with a graph neural network pipeline
+could allow the algorithm to serve as a high-quality label generator or preprocessor
+for deep learning-based community detection.
+References
+[1]J.-P. Attal,M. Malek,M. Zolghadri:Overlapping community detection using core label
+propagation algorithm and belonging functions, Applied Intelligence 51.11 (2021), pp. 8067–
+8087,doi:10.1007/s10489-021-02250-4.
+[2]L. M. Collins,C. W. Dent:Omega: A general formulation of the rand index of cluster
+recovery suitable for non-disjoint solutions, Multivariate behavioral research 23.2 (1988),
+pp. 231–242,doi:10.1207/s15327906mbr2302_6.
+[3]W. F ang,X. W ang,L. Liu,Z. Wu,S. Tang,Z. Zheng:Community detection through
+vector-label propagation algorithms, Chaos, Solitons & Fractals 158 (2022), p. 112066,doi:
+10.1016/j.chaos.2022.112066.
+[4]S. Fortunato,D. Hric:Community detection in networks: A user guide, Physics reports
+659 (2016), pp. 1–44,doi:10.1016/j.physrep.2016.09.002.
+[5]L. C. Freeman:A set of measures of centrality based on betweenness, Sociometry (1977),
+pp. 35–41,doi:10.2307/3033543.
+[6]L. C. Freeman:Centrality in social networks conceptual clarification, Social networks 1.3
+(1978), pp. 215–239.
+245
+
+--- PDF PAGE 18 ---
+Annal.Math.etInf.S. P. Tahalea, M. Krész
+[7]S. Goswami,A. K. Singh:A survey on overlapping community detection: label propagation,
+Multimedia Tools and Applications (2024), pp. 1–30,doi:10.1007/s11042-024-20485-4.
+[8]S. Gregory:Fuzzy overlapping communities in networks, Journal of Statistical Mechanics:
+Theory and Experiment 2011.02 (2011), P02017,doi:10.1088/1742-5468/2011/02/P02017.
+[9]P. W. Holland,K. B. Laskey,S. Leinhardt:Stochastic blockmodels: First steps, Social
+networks 5.2 (1983), pp. 109–137,doi:10.1016/0378-8733(83)90021-7.
+[10]V. Krebs:Books about US politics, unpublished, http://www. orgnet. com (2004).
+[11]A. Kumari,A. Kumar,P. Kumar:A new modularity metric for disjoint and overlapping
+community structure evaluation in weighted complex networks, International Journal of Data
+Science and Analytics (2025), pp. 1–25.
+[12]A. Lancichinetti,S. Fortunato,F. Radicchi:Benchmark graphs for testing community
+detection algorithms, Physical Review E—Statistical, Nonlinear, and Soft Matter Physics
+78.4 (2008), p. 046110,doi:10.1103/PhysRevE.78.046110.
+[13]P.-Z. Li,L. Huang,C.-D. W ang,J.-H. Lai,D. Huang:Community detection by motif-
+aware label propagation, ACM Transactions on Knowledge Discovery from Data (TKDD)
+14.2 (2020), pp. 1–19,doi:10.1145/3378537.
+[14]X. Li,Q. Sun:Detect Overlapping Community Based on the Combination of Local Expansion
+and Label Propagation, Algorithms 14.8 (2021), p. 237,doi:10.3390/a14080237.
+[15]Y. Li,K. He,D. Bindel,J. E. Hopcroft:Uncovering the small community structure in
+large networks: A local spectral approach, in: Proceedings of the 24th international conference
+on world wide web, 2015, pp. 658–668,doi:10.1145/2736277.2741676.
+[16]Z. Lin,X. Zheng,N. Xin,D. Chen:CK-LPA: Efficient community detection algorithm
+based on label propagation with community kernel, Physica A: Statistical Mechanics and its
+Applications 416 (2014), pp. 386–399,doi:10.1016/j.physa.2014.09.023.
+[17]X. Liu,T. Murata:Advanced modularity-specialized label propagation algorithm for detect-
+ing communities in networks, Physica A: Statistical Mechanics and its Applications 389.7
+(2010), pp. 1493–1500,doi:10.1016/j.physa.2009.12.019.
+[18]A. F. McDaid,D. Greene,N. Hurley:Normalized mutual information to evaluate over-
+lapping community finding algorithms, arXiv preprint arXiv:1110.2515 (2011),doi:10.4855
+0/arXiv.1110.2515.
+[19]M. Meilă:Comparing clusterings by the variation of information, in: Learning Theory and
+Kernel Machines: 16th Annual Conference on Learning Theory and 7th Kernel Workshop,
+COLT/Kernel2003,Washington,DC,USA,August24-27,2003.Proceedings,Springer,2003,
+pp. 173–187,doi:10.1007/978-3-540-45167-9_14.
+[20]G. Murray,G. Carenini,R. Ng:Using the omega index for evaluating abstractive com-
+munity detection, in: Proceedings of workshop on evaluation metrics and system comparison
+for automatic summarization, 2012, pp. 10–18.
+[21]M. E. Newman,M. Girvan:Finding and evaluating community structure in networks, Phys-
+ical review E 69.2 (2004), p. 026113,doi:10.1103/PhysRevE.69.026113.
+[22]Q. Ni,J. W ang,Z. Tang:Degree and betweenness-based label propagation for community
+detection, Journal of Combinatorial Optimization 49.2 (2025), p. 21,doi:10.1007/s10878-
+024-01254-3.
+[23]G. Palla,I. Derényi,I. F arkas,T. Vicsek:Uncovering the overlapping community struc-
+ture of complex networks in nature and society, nature 435.7043 (2005), pp. 814–818,doi:
+10.1038/nature03607.
+[24]C. Pizzuti:Ga-net: A genetic algorithm for community detection in social networks, in:
+International conference on parallel problem solving from nature, Springer, 2008, pp. 1081–
+1090,doi:10.1007/978-3-540-87700-4_107.
+246
+
+--- PDF PAGE 19 ---
+Annal.Math.etInf.Betweenness-driven overlapping label propagation . . .
+[25]U. N. Raghavan,R. Albert,S. Kumara:Near linear time algorithm to detect commu-
+nity structures in large-scale networks, Physical Review E—Statistical, Nonlinear, and Soft
+Matter Physics 76.3 (2007), p. 036106,doi:10.1103/PhysRevE.76.036106.
+[26]A. Sarswat,V. Jami,R. M. R. Guddeti:A novel two-step approach for overlapping com-
+munity detection in social networks, Social Network Analysis and Mining 7.1 (2017), p. 47,
+doi:10.1007/s13278-017-0469-7.
+[27]H.-W. Shen,X.-Q. Cheng,J.-F. Guo:Quantifying and identifying the overlapping commu-
+nity structure in networks, Journal of Statistical Mechanics: Theory and Experiment 2009.07
+(2009), P07042,doi:10.1088/1742-5468/2009/07/P07042.
+[28]F. W ang,T. Li,X. W ang,S. Zhu,C. Ding:Community discovery using nonnegative matrix
+factorization, Data Mining and Knowledge Discovery 22.3 (2011), pp. 493–521,doi:10.100
+7/s10618-010-0181-y.
+[29]J. Xie,B. K. Szymanski,X. Liu:Slpa: Uncovering overlapping communities in social net-
+works via a speaker-listener interaction dynamic process, in: 2011 ieee 11th international
+conference on data mining workshops, IEEE, 2011, pp. 344–349,doi:10.1109/ICDMW.2011
+.154.
+[30]H. Xu,Y. Ran,J. Xing,L. Tao:An influence-based label propagation algorithm for overlap-
+ping community detection, Mathematics 11.9 (2023), p. 2133,doi:10.3390/math11092133.
+[31]M. Yan,C. Guoqiang:Label propagation community detection algorithm based on density
+peak optimization, in: 2021 17th International Conference on Computational Intelligence and
+Security (CIS), IEEE, 2021, pp. 80–84,doi:10.1109/CIS54983.2021.00025.
+[32]J. Yang,J. Leskovec:Overlapping community detection at scale: a nonnegative matrix
+factorization approach, in: Proceedings of the sixth ACM international conference on Web
+search and data mining, 2013, pp. 587–596,doi:10.1145/2433396.2433471.
+[33]S. Yazdanparast,M. Jamalabdollahi,T. C. Havens:Linear time community detection
+by a novel modularity gain acceleration in label propagation, IEEE Transactions on Big Data
+7.6 (2020), pp. 961–966,doi:10.1109/TBDATA.2020.2995621.
+[34]W. Zhang,R. Shang,L. Jiao:Large-scale community detection based on core node and
+layer-by-layer label propagation, Information Sciences 632 (2023), pp. 1–18,doi:10.1016/j
+.ins.2023.02.090.
+247

@@ -1,0 +1,26 @@
+{
+  "dataset_id": "dolphins",
+  "source_url": "https://websites.umich.edu/~mejn/netdata/dolphins.zip",
+  "graph_hash": "c7de19be56b62b681f8e44b9ebf8dd1703915c4e5bb06dd2da45b32679080503",
+  "nodes": 62,
+  "edges": 159,
+  "source_nodes": 62,
+  "source_edges": 159,
+  "source_directed": false,
+  "source_self_loops_removed": 0,
+  "connected_components": 1,
+  "isolates": 0,
+  "density": 0.08408249603384453,
+  "mean_degree": 5.129032258064516,
+  "max_degree": 12,
+  "reference_groups": null,
+  "label_coverage": 0.0,
+  "policy": "Undirected OR-symmetrisation; deduplicate; remove loops; retain every source node; discard source weights for common topology",
+  "raw_sha256": {
+    "dolphins.gml": "58ce901a69d090fbbc205f49878576ff138fc64036bad0a259cb1c2ddeb36325",
+    "dolphins.txt": "b472b71ffaef9698b1165bd2d0e88899432dfe4aad8ba53e3f0e938075581a91",
+    "dolphins.zip": "42ad752c1711f2e9ab625aef0fb123463523a2590825b546b02ecac23735aa4c"
+  },
+  "prepared_utc": "2026-10-26T14:35:59.127643+00:00",
+  "reference_label_source": "Unavailable: source supplies names, not a validated two-group reference partition"
+}

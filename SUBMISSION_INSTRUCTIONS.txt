@@ -1,0 +1,5 @@
+Upload this complete folder once for the team.
+Designated uploader: Aditya Kosuru (230968316), first in the supplied member order.
+Required main files: Project_Report.pdf and SNA_Project_with_Results.ipynb.
+The notebook has executed results; the source code, data and full evidence are included.
+A ZIP copy is provided for convenient transfer/extraction.

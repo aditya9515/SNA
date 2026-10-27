@@ -1,0 +1,34 @@
+{
+  "dataset_id": "test_sbm_medium_202",
+  "source_url": "Locally generated NetworkX stochastic_block_model",
+  "graph_hash": "efd72094a3bf486789d8b5dea08443b83946daa121e4782f447accbea9e1cb3e",
+  "nodes": 400,
+  "edges": 4673,
+  "source_nodes": 400,
+  "source_edges": 4673,
+  "source_directed": false,
+  "source_self_loops_removed": 0,
+  "connected_components": 1,
+  "isolates": 0,
+  "density": 0.05855889724310777,
+  "mean_degree": 23.365,
+  "max_degree": 36,
+  "reference_groups": 4,
+  "label_coverage": 1.0,
+  "policy": "Undirected OR-symmetrisation; deduplicate; remove loops; retain every source node; discard source weights for common topology",
+  "raw_sha256": {
+    "generation.json": "a94d0b0dc3e959fedb47934e119df06c1655161c101d41f7f2e28db442de8e3f"
+  },
+  "prepared_utc": "2026-10-26T14:36:03.554484+00:00",
+  "role": "test",
+  "generation_seed": 202,
+  "sizes": [
+    100,
+    100,
+    100,
+    100
+  ],
+  "p_in": 0.16,
+  "p_out": 0.025,
+  "reference_label_source": "Planted stochastic block membership"
+}

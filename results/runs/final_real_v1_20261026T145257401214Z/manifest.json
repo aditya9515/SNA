@@ -1,0 +1,1606 @@
+{
+  "config_hash": "64e0f49bf485d80c18cc2016abb64ff82975c8b2169f8743c2bf6833d41e2297",
+  "expected_count": 320,
+  "runs": [
+    {
+      "dataset_id": "karate",
+      "method": "flpa_original",
+      "seed": 0
+    },
+    {
+      "dataset_id": "karate",
+      "method": "flpa_original",
+      "seed": 1
+    },
+    {
+      "dataset_id": "karate",
+      "method": "flpa_original",
+      "seed": 2
+    },
+    {
+      "dataset_id": "karate",
+      "method": "flpa_original",
+      "seed": 3
+    },
+    {
+      "dataset_id": "karate",
+      "method": "flpa_original",
+      "seed": 4
+    },
+    {
+      "dataset_id": "karate",
+      "method": "flpa_original",
+      "seed": 5
+    },
+    {
+      "dataset_id": "karate",
+      "method": "flpa_original",
+      "seed": 6
+    },
+    {
+      "dataset_id": "karate",
+      "method": "flpa_original",
+      "seed": 7
+    },
+    {
+      "dataset_id": "karate",
+      "method": "flpa_original",
+      "seed": 8
+    },
+    {
+      "dataset_id": "karate",
+      "method": "flpa_original",
+      "seed": 9
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c00_unit_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c00_unit_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c00_unit_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c00_unit_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c00_unit_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c00_unit_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c00_unit_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c00_unit_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c00_unit_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c00_unit_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c10_weighted_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c10_weighted_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c10_weighted_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c10_weighted_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c10_weighted_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c10_weighted_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c10_weighted_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c10_weighted_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c10_weighted_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c10_weighted_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c01_unit_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c01_unit_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c01_unit_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c01_unit_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c01_unit_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c01_unit_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c01_unit_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c01_unit_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c01_unit_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c01_unit_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c11_weighted_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c11_weighted_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c11_weighted_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c11_weighted_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c11_weighted_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c11_weighted_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c11_weighted_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c11_weighted_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c11_weighted_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "karate",
+      "method": "c11_weighted_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "karate",
+      "method": "asyn_lpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "karate",
+      "method": "asyn_lpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "karate",
+      "method": "asyn_lpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "karate",
+      "method": "asyn_lpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "karate",
+      "method": "asyn_lpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "karate",
+      "method": "asyn_lpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "karate",
+      "method": "asyn_lpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "karate",
+      "method": "asyn_lpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "karate",
+      "method": "asyn_lpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "karate",
+      "method": "asyn_lpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "karate",
+      "method": "leiden_modularity",
+      "seed": 0
+    },
+    {
+      "dataset_id": "karate",
+      "method": "leiden_modularity",
+      "seed": 1
+    },
+    {
+      "dataset_id": "karate",
+      "method": "leiden_modularity",
+      "seed": 2
+    },
+    {
+      "dataset_id": "karate",
+      "method": "leiden_modularity",
+      "seed": 3
+    },
+    {
+      "dataset_id": "karate",
+      "method": "leiden_modularity",
+      "seed": 4
+    },
+    {
+      "dataset_id": "karate",
+      "method": "leiden_modularity",
+      "seed": 5
+    },
+    {
+      "dataset_id": "karate",
+      "method": "leiden_modularity",
+      "seed": 6
+    },
+    {
+      "dataset_id": "karate",
+      "method": "leiden_modularity",
+      "seed": 7
+    },
+    {
+      "dataset_id": "karate",
+      "method": "leiden_modularity",
+      "seed": 8
+    },
+    {
+      "dataset_id": "karate",
+      "method": "leiden_modularity",
+      "seed": 9
+    },
+    {
+      "dataset_id": "karate",
+      "method": "nx_weighted_flpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "karate",
+      "method": "nx_weighted_flpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "karate",
+      "method": "nx_weighted_flpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "karate",
+      "method": "nx_weighted_flpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "karate",
+      "method": "nx_weighted_flpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "karate",
+      "method": "nx_weighted_flpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "karate",
+      "method": "nx_weighted_flpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "karate",
+      "method": "nx_weighted_flpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "karate",
+      "method": "nx_weighted_flpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "karate",
+      "method": "nx_weighted_flpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "flpa_original",
+      "seed": 0
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "flpa_original",
+      "seed": 1
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "flpa_original",
+      "seed": 2
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "flpa_original",
+      "seed": 3
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "flpa_original",
+      "seed": 4
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "flpa_original",
+      "seed": 5
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "flpa_original",
+      "seed": 6
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "flpa_original",
+      "seed": 7
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "flpa_original",
+      "seed": 8
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "flpa_original",
+      "seed": 9
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c00_unit_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c00_unit_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c00_unit_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c00_unit_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c00_unit_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c00_unit_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c00_unit_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c00_unit_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c00_unit_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c00_unit_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c10_weighted_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c10_weighted_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c10_weighted_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c10_weighted_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c10_weighted_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c10_weighted_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c10_weighted_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c10_weighted_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c10_weighted_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c10_weighted_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c01_unit_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c01_unit_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c01_unit_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c01_unit_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c01_unit_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c01_unit_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c01_unit_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c01_unit_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c01_unit_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c01_unit_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c11_weighted_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c11_weighted_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c11_weighted_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c11_weighted_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c11_weighted_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c11_weighted_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c11_weighted_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c11_weighted_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c11_weighted_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "c11_weighted_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "asyn_lpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "asyn_lpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "asyn_lpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "asyn_lpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "asyn_lpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "asyn_lpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "asyn_lpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "asyn_lpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "asyn_lpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "asyn_lpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "leiden_modularity",
+      "seed": 0
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "leiden_modularity",
+      "seed": 1
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "leiden_modularity",
+      "seed": 2
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "leiden_modularity",
+      "seed": 3
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "leiden_modularity",
+      "seed": 4
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "leiden_modularity",
+      "seed": 5
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "leiden_modularity",
+      "seed": 6
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "leiden_modularity",
+      "seed": 7
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "leiden_modularity",
+      "seed": 8
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "leiden_modularity",
+      "seed": 9
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "nx_weighted_flpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "nx_weighted_flpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "nx_weighted_flpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "nx_weighted_flpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "nx_weighted_flpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "nx_weighted_flpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "nx_weighted_flpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "nx_weighted_flpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "nx_weighted_flpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "dolphins",
+      "method": "nx_weighted_flpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "football",
+      "method": "flpa_original",
+      "seed": 0
+    },
+    {
+      "dataset_id": "football",
+      "method": "flpa_original",
+      "seed": 1
+    },
+    {
+      "dataset_id": "football",
+      "method": "flpa_original",
+      "seed": 2
+    },
+    {
+      "dataset_id": "football",
+      "method": "flpa_original",
+      "seed": 3
+    },
+    {
+      "dataset_id": "football",
+      "method": "flpa_original",
+      "seed": 4
+    },
+    {
+      "dataset_id": "football",
+      "method": "flpa_original",
+      "seed": 5
+    },
+    {
+      "dataset_id": "football",
+      "method": "flpa_original",
+      "seed": 6
+    },
+    {
+      "dataset_id": "football",
+      "method": "flpa_original",
+      "seed": 7
+    },
+    {
+      "dataset_id": "football",
+      "method": "flpa_original",
+      "seed": 8
+    },
+    {
+      "dataset_id": "football",
+      "method": "flpa_original",
+      "seed": 9
+    },
+    {
+      "dataset_id": "football",
+      "method": "c00_unit_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "football",
+      "method": "c00_unit_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "football",
+      "method": "c00_unit_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "football",
+      "method": "c00_unit_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "football",
+      "method": "c00_unit_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "football",
+      "method": "c00_unit_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "football",
+      "method": "c00_unit_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "football",
+      "method": "c00_unit_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "football",
+      "method": "c00_unit_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "football",
+      "method": "c00_unit_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "football",
+      "method": "c10_weighted_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "football",
+      "method": "c10_weighted_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "football",
+      "method": "c10_weighted_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "football",
+      "method": "c10_weighted_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "football",
+      "method": "c10_weighted_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "football",
+      "method": "c10_weighted_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "football",
+      "method": "c10_weighted_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "football",
+      "method": "c10_weighted_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "football",
+      "method": "c10_weighted_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "football",
+      "method": "c10_weighted_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "football",
+      "method": "c01_unit_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "football",
+      "method": "c01_unit_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "football",
+      "method": "c01_unit_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "football",
+      "method": "c01_unit_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "football",
+      "method": "c01_unit_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "football",
+      "method": "c01_unit_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "football",
+      "method": "c01_unit_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "football",
+      "method": "c01_unit_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "football",
+      "method": "c01_unit_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "football",
+      "method": "c01_unit_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "football",
+      "method": "c11_weighted_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "football",
+      "method": "c11_weighted_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "football",
+      "method": "c11_weighted_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "football",
+      "method": "c11_weighted_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "football",
+      "method": "c11_weighted_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "football",
+      "method": "c11_weighted_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "football",
+      "method": "c11_weighted_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "football",
+      "method": "c11_weighted_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "football",
+      "method": "c11_weighted_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "football",
+      "method": "c11_weighted_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "football",
+      "method": "asyn_lpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "football",
+      "method": "asyn_lpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "football",
+      "method": "asyn_lpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "football",
+      "method": "asyn_lpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "football",
+      "method": "asyn_lpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "football",
+      "method": "asyn_lpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "football",
+      "method": "asyn_lpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "football",
+      "method": "asyn_lpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "football",
+      "method": "asyn_lpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "football",
+      "method": "asyn_lpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "football",
+      "method": "leiden_modularity",
+      "seed": 0
+    },
+    {
+      "dataset_id": "football",
+      "method": "leiden_modularity",
+      "seed": 1
+    },
+    {
+      "dataset_id": "football",
+      "method": "leiden_modularity",
+      "seed": 2
+    },
+    {
+      "dataset_id": "football",
+      "method": "leiden_modularity",
+      "seed": 3
+    },
+    {
+      "dataset_id": "football",
+      "method": "leiden_modularity",
+      "seed": 4
+    },
+    {
+      "dataset_id": "football",
+      "method": "leiden_modularity",
+      "seed": 5
+    },
+    {
+      "dataset_id": "football",
+      "method": "leiden_modularity",
+      "seed": 6
+    },
+    {
+      "dataset_id": "football",
+      "method": "leiden_modularity",
+      "seed": 7
+    },
+    {
+      "dataset_id": "football",
+      "method": "leiden_modularity",
+      "seed": 8
+    },
+    {
+      "dataset_id": "football",
+      "method": "leiden_modularity",
+      "seed": 9
+    },
+    {
+      "dataset_id": "football",
+      "method": "nx_weighted_flpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "football",
+      "method": "nx_weighted_flpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "football",
+      "method": "nx_weighted_flpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "football",
+      "method": "nx_weighted_flpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "football",
+      "method": "nx_weighted_flpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "football",
+      "method": "nx_weighted_flpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "football",
+      "method": "nx_weighted_flpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "football",
+      "method": "nx_weighted_flpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "football",
+      "method": "nx_weighted_flpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "football",
+      "method": "nx_weighted_flpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "flpa_original",
+      "seed": 0
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "flpa_original",
+      "seed": 1
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "flpa_original",
+      "seed": 2
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "flpa_original",
+      "seed": 3
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "flpa_original",
+      "seed": 4
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "flpa_original",
+      "seed": 5
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "flpa_original",
+      "seed": 6
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "flpa_original",
+      "seed": 7
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "flpa_original",
+      "seed": 8
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "flpa_original",
+      "seed": 9
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c00_unit_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c00_unit_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c00_unit_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c00_unit_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c00_unit_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c00_unit_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c00_unit_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c00_unit_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c00_unit_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c00_unit_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c10_weighted_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c10_weighted_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c10_weighted_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c10_weighted_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c10_weighted_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c10_weighted_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c10_weighted_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c10_weighted_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c10_weighted_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c10_weighted_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c01_unit_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c01_unit_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c01_unit_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c01_unit_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c01_unit_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c01_unit_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c01_unit_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c01_unit_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c01_unit_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c01_unit_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c11_weighted_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c11_weighted_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c11_weighted_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c11_weighted_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c11_weighted_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c11_weighted_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c11_weighted_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c11_weighted_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c11_weighted_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "c11_weighted_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "asyn_lpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "asyn_lpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "asyn_lpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "asyn_lpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "asyn_lpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "asyn_lpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "asyn_lpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "asyn_lpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "asyn_lpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "asyn_lpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "leiden_modularity",
+      "seed": 0
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "leiden_modularity",
+      "seed": 1
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "leiden_modularity",
+      "seed": 2
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "leiden_modularity",
+      "seed": 3
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "leiden_modularity",
+      "seed": 4
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "leiden_modularity",
+      "seed": 5
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "leiden_modularity",
+      "seed": 6
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "leiden_modularity",
+      "seed": 7
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "leiden_modularity",
+      "seed": 8
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "leiden_modularity",
+      "seed": 9
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "nx_weighted_flpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "nx_weighted_flpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "nx_weighted_flpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "nx_weighted_flpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "nx_weighted_flpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "nx_weighted_flpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "nx_weighted_flpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "nx_weighted_flpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "nx_weighted_flpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "email_eu_core",
+      "method": "nx_weighted_flpa",
+      "seed": 9
+    }
+  ]
+}

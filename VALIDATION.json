@@ -1,0 +1,26 @@
+{
+  "final_runs": 1040,
+  "real_runs": 320,
+  "synthetic_runs": 720,
+  "successful_final_runs": 1040,
+  "development_runs": 80,
+  "passing_correctness_tests": 69,
+  "journal_papers": 10,
+  "executed_notebook_code_cells": 10,
+  "report_pages": 25,
+  "abstract_words": 150,
+  "scientific_source_sha256": "1cd87826d0fc1ce23dee479206a27179bd2dd069968722dc7d97a60ba4aa8df6",
+  "status": "passed",
+  "notes": "Notebook independently recomputes all final partition metrics; rendered PDF reviewed separately; timings are measured and machine-dependent.",
+  "report_style": {
+    "font": "Times New Roman",
+    "body_size_points": 12,
+    "native_text_colours": [
+      "black"
+    ],
+    "tables": "Plain black grid, black text, white background",
+    "cover_heading": "MIT",
+    "scientific_content_unchanged": true,
+    "rendered_pages_reviewed": 25
+  }
+}

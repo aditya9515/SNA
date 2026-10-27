@@ -1,0 +1,19 @@
+{
+  "python": "3.12.15 (main, Oct 21 2026, 17:48:33) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "processor": "Intel64 Family 6 Model 141 Stepping 1, GenuineIntel",
+  "machine": "AMD64",
+  "packages": {
+    "networkx": "3.7",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "igraph": "1.0.0",
+    "leidenalg": "0.12.0"
+  },
+  "timing": "Sequential cold method cost; warm imports; preparation/conversion/execution measured separately",
+  "utc": "2026-10-26T14:52:57.455231+00:00",
+  "code_sha256": "1cd87826d0fc1ce23dee479206a27179bd2dd069968722dc7d97a60ba4aa8df6"
+}

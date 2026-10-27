@@ -1,0 +1,6 @@
+experiment_id: smoke
+role: smoke
+datasets: [karate]
+methods: [flpa_original, c11_weighted_retain]
+seeds: [0, 1]
+schedule_seed: 2718

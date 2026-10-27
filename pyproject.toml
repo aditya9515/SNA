@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sna-community-project"
+version = "1.0.0"
+description = "Reproducible structural weighting and retention experiments for FLPA"
+requires-python = ">=3.11,<3.14"
+dependencies = ["networkx>=3.4", "numpy", "scipy", "pandas", "scikit-learn", "matplotlib", "PyYAML", "requests", "python-igraph", "leidenalg"]
+
+[project.optional-dependencies]
+dev = ["pytest", "nbformat", "nbclient", "ipykernel", "reportlab", "pypdf", "pymupdf", "beautifulsoup4", "psutil"]
+
+[project.scripts]
+sna-project = "sna_project.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

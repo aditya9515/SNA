@@ -1,0 +1,3606 @@
+{
+  "config_hash": "a94dcd5f14a6c9f1811bdcb7711a046e745f9337e74b557d4534c37f25a49872",
+  "expected_count": 720,
+  "runs": [
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "flpa_original",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "flpa_original",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "flpa_original",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "flpa_original",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "flpa_original",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "flpa_original",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "flpa_original",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "flpa_original",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "flpa_original",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "flpa_original",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c00_unit_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c00_unit_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c00_unit_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c00_unit_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c00_unit_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c00_unit_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c00_unit_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c00_unit_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c00_unit_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c00_unit_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c10_weighted_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c10_weighted_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c10_weighted_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c10_weighted_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c10_weighted_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c10_weighted_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c10_weighted_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c10_weighted_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c10_weighted_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c10_weighted_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c01_unit_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c01_unit_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c01_unit_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c01_unit_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c01_unit_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c01_unit_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c01_unit_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c01_unit_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c01_unit_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c01_unit_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c11_weighted_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c11_weighted_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c11_weighted_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c11_weighted_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c11_weighted_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c11_weighted_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c11_weighted_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c11_weighted_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c11_weighted_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "c11_weighted_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "asyn_lpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "asyn_lpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "asyn_lpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "asyn_lpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "asyn_lpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "asyn_lpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "asyn_lpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "asyn_lpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "asyn_lpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "asyn_lpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "leiden_modularity",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "leiden_modularity",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "leiden_modularity",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "leiden_modularity",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "leiden_modularity",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "leiden_modularity",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "leiden_modularity",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "leiden_modularity",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "leiden_modularity",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "leiden_modularity",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "nx_weighted_flpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "nx_weighted_flpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "nx_weighted_flpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "nx_weighted_flpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "nx_weighted_flpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "nx_weighted_flpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "nx_weighted_flpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "nx_weighted_flpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "nx_weighted_flpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_200",
+      "method": "nx_weighted_flpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "flpa_original",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "flpa_original",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "flpa_original",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "flpa_original",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "flpa_original",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "flpa_original",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "flpa_original",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "flpa_original",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "flpa_original",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "flpa_original",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c00_unit_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c00_unit_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c00_unit_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c00_unit_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c00_unit_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c00_unit_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c00_unit_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c00_unit_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c00_unit_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c00_unit_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c10_weighted_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c10_weighted_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c10_weighted_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c10_weighted_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c10_weighted_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c10_weighted_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c10_weighted_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c10_weighted_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c10_weighted_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c10_weighted_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c01_unit_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c01_unit_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c01_unit_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c01_unit_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c01_unit_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c01_unit_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c01_unit_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c01_unit_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c01_unit_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c01_unit_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c11_weighted_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c11_weighted_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c11_weighted_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c11_weighted_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c11_weighted_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c11_weighted_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c11_weighted_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c11_weighted_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c11_weighted_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "c11_weighted_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "asyn_lpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "asyn_lpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "asyn_lpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "asyn_lpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "asyn_lpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "asyn_lpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "asyn_lpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "asyn_lpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "asyn_lpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "asyn_lpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "leiden_modularity",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "leiden_modularity",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "leiden_modularity",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "leiden_modularity",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "leiden_modularity",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "leiden_modularity",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "leiden_modularity",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "leiden_modularity",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "leiden_modularity",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "leiden_modularity",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "nx_weighted_flpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "nx_weighted_flpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "nx_weighted_flpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "nx_weighted_flpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "nx_weighted_flpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "nx_weighted_flpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "nx_weighted_flpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "nx_weighted_flpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "nx_weighted_flpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_201",
+      "method": "nx_weighted_flpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "flpa_original",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "flpa_original",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "flpa_original",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "flpa_original",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "flpa_original",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "flpa_original",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "flpa_original",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "flpa_original",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "flpa_original",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "flpa_original",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c00_unit_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c00_unit_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c00_unit_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c00_unit_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c00_unit_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c00_unit_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c00_unit_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c00_unit_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c00_unit_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c00_unit_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c10_weighted_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c10_weighted_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c10_weighted_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c10_weighted_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c10_weighted_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c10_weighted_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c10_weighted_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c10_weighted_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c10_weighted_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c10_weighted_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c01_unit_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c01_unit_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c01_unit_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c01_unit_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c01_unit_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c01_unit_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c01_unit_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c01_unit_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c01_unit_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c01_unit_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c11_weighted_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c11_weighted_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c11_weighted_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c11_weighted_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c11_weighted_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c11_weighted_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c11_weighted_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c11_weighted_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c11_weighted_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "c11_weighted_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "asyn_lpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "asyn_lpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "asyn_lpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "asyn_lpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "asyn_lpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "asyn_lpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "asyn_lpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "asyn_lpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "asyn_lpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "asyn_lpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "leiden_modularity",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "leiden_modularity",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "leiden_modularity",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "leiden_modularity",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "leiden_modularity",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "leiden_modularity",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "leiden_modularity",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "leiden_modularity",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "leiden_modularity",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "leiden_modularity",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "nx_weighted_flpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "nx_weighted_flpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "nx_weighted_flpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "nx_weighted_flpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "nx_weighted_flpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "nx_weighted_flpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "nx_weighted_flpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "nx_weighted_flpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "nx_weighted_flpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_low_202",
+      "method": "nx_weighted_flpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "flpa_original",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "flpa_original",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "flpa_original",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "flpa_original",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "flpa_original",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "flpa_original",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "flpa_original",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "flpa_original",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "flpa_original",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "flpa_original",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c00_unit_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c00_unit_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c00_unit_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c00_unit_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c00_unit_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c00_unit_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c00_unit_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c00_unit_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c00_unit_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c00_unit_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c10_weighted_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c10_weighted_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c10_weighted_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c10_weighted_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c10_weighted_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c10_weighted_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c10_weighted_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c10_weighted_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c10_weighted_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c10_weighted_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c01_unit_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c01_unit_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c01_unit_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c01_unit_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c01_unit_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c01_unit_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c01_unit_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c01_unit_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c01_unit_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c01_unit_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c11_weighted_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c11_weighted_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c11_weighted_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c11_weighted_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c11_weighted_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c11_weighted_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c11_weighted_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c11_weighted_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c11_weighted_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "c11_weighted_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "asyn_lpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "asyn_lpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "asyn_lpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "asyn_lpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "asyn_lpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "asyn_lpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "asyn_lpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "asyn_lpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "asyn_lpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "asyn_lpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "leiden_modularity",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "leiden_modularity",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "leiden_modularity",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "leiden_modularity",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "leiden_modularity",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "leiden_modularity",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "leiden_modularity",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "leiden_modularity",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "leiden_modularity",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "leiden_modularity",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "nx_weighted_flpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "nx_weighted_flpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "nx_weighted_flpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "nx_weighted_flpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "nx_weighted_flpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "nx_weighted_flpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "nx_weighted_flpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "nx_weighted_flpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "nx_weighted_flpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_200",
+      "method": "nx_weighted_flpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "flpa_original",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "flpa_original",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "flpa_original",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "flpa_original",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "flpa_original",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "flpa_original",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "flpa_original",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "flpa_original",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "flpa_original",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "flpa_original",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c00_unit_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c00_unit_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c00_unit_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c00_unit_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c00_unit_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c00_unit_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c00_unit_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c00_unit_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c00_unit_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c00_unit_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c10_weighted_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c10_weighted_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c10_weighted_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c10_weighted_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c10_weighted_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c10_weighted_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c10_weighted_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c10_weighted_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c10_weighted_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c10_weighted_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c01_unit_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c01_unit_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c01_unit_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c01_unit_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c01_unit_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c01_unit_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c01_unit_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c01_unit_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c01_unit_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c01_unit_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c11_weighted_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c11_weighted_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c11_weighted_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c11_weighted_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c11_weighted_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c11_weighted_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c11_weighted_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c11_weighted_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c11_weighted_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "c11_weighted_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "asyn_lpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "asyn_lpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "asyn_lpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "asyn_lpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "asyn_lpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "asyn_lpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "asyn_lpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "asyn_lpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "asyn_lpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "asyn_lpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "leiden_modularity",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "leiden_modularity",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "leiden_modularity",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "leiden_modularity",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "leiden_modularity",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "leiden_modularity",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "leiden_modularity",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "leiden_modularity",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "leiden_modularity",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "leiden_modularity",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "nx_weighted_flpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "nx_weighted_flpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "nx_weighted_flpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "nx_weighted_flpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "nx_weighted_flpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "nx_weighted_flpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "nx_weighted_flpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "nx_weighted_flpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "nx_weighted_flpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_201",
+      "method": "nx_weighted_flpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "flpa_original",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "flpa_original",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "flpa_original",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "flpa_original",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "flpa_original",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "flpa_original",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "flpa_original",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "flpa_original",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "flpa_original",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "flpa_original",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c00_unit_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c00_unit_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c00_unit_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c00_unit_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c00_unit_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c00_unit_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c00_unit_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c00_unit_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c00_unit_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c00_unit_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c10_weighted_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c10_weighted_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c10_weighted_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c10_weighted_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c10_weighted_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c10_weighted_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c10_weighted_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c10_weighted_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c10_weighted_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c10_weighted_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c01_unit_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c01_unit_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c01_unit_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c01_unit_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c01_unit_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c01_unit_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c01_unit_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c01_unit_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c01_unit_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c01_unit_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c11_weighted_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c11_weighted_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c11_weighted_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c11_weighted_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c11_weighted_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c11_weighted_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c11_weighted_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c11_weighted_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c11_weighted_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "c11_weighted_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "asyn_lpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "asyn_lpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "asyn_lpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "asyn_lpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "asyn_lpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "asyn_lpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "asyn_lpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "asyn_lpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "asyn_lpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "asyn_lpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "leiden_modularity",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "leiden_modularity",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "leiden_modularity",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "leiden_modularity",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "leiden_modularity",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "leiden_modularity",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "leiden_modularity",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "leiden_modularity",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "leiden_modularity",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "leiden_modularity",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "nx_weighted_flpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "nx_weighted_flpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "nx_weighted_flpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "nx_weighted_flpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "nx_weighted_flpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "nx_weighted_flpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "nx_weighted_flpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "nx_weighted_flpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "nx_weighted_flpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_medium_202",
+      "method": "nx_weighted_flpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "flpa_original",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "flpa_original",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "flpa_original",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "flpa_original",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "flpa_original",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "flpa_original",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "flpa_original",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "flpa_original",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "flpa_original",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "flpa_original",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c00_unit_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c00_unit_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c00_unit_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c00_unit_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c00_unit_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c00_unit_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c00_unit_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c00_unit_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c00_unit_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c00_unit_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c10_weighted_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c10_weighted_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c10_weighted_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c10_weighted_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c10_weighted_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c10_weighted_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c10_weighted_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c10_weighted_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c10_weighted_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c10_weighted_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c01_unit_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c01_unit_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c01_unit_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c01_unit_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c01_unit_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c01_unit_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c01_unit_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c01_unit_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c01_unit_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c01_unit_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c11_weighted_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c11_weighted_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c11_weighted_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c11_weighted_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c11_weighted_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c11_weighted_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c11_weighted_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c11_weighted_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c11_weighted_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "c11_weighted_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "asyn_lpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "asyn_lpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "asyn_lpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "asyn_lpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "asyn_lpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "asyn_lpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "asyn_lpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "asyn_lpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "asyn_lpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "asyn_lpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "leiden_modularity",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "leiden_modularity",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "leiden_modularity",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "leiden_modularity",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "leiden_modularity",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "leiden_modularity",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "leiden_modularity",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "leiden_modularity",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "leiden_modularity",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "leiden_modularity",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "nx_weighted_flpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "nx_weighted_flpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "nx_weighted_flpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "nx_weighted_flpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "nx_weighted_flpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "nx_weighted_flpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "nx_weighted_flpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "nx_weighted_flpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "nx_weighted_flpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_200",
+      "method": "nx_weighted_flpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "flpa_original",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "flpa_original",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "flpa_original",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "flpa_original",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "flpa_original",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "flpa_original",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "flpa_original",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "flpa_original",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "flpa_original",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "flpa_original",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c00_unit_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c00_unit_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c00_unit_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c00_unit_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c00_unit_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c00_unit_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c00_unit_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c00_unit_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c00_unit_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c00_unit_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c10_weighted_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c10_weighted_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c10_weighted_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c10_weighted_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c10_weighted_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c10_weighted_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c10_weighted_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c10_weighted_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c10_weighted_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c10_weighted_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c01_unit_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c01_unit_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c01_unit_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c01_unit_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c01_unit_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c01_unit_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c01_unit_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c01_unit_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c01_unit_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c01_unit_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c11_weighted_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c11_weighted_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c11_weighted_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c11_weighted_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c11_weighted_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c11_weighted_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c11_weighted_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c11_weighted_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c11_weighted_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "c11_weighted_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "asyn_lpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "asyn_lpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "asyn_lpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "asyn_lpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "asyn_lpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "asyn_lpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "asyn_lpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "asyn_lpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "asyn_lpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "asyn_lpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "leiden_modularity",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "leiden_modularity",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "leiden_modularity",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "leiden_modularity",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "leiden_modularity",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "leiden_modularity",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "leiden_modularity",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "leiden_modularity",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "leiden_modularity",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "leiden_modularity",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "nx_weighted_flpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "nx_weighted_flpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "nx_weighted_flpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "nx_weighted_flpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "nx_weighted_flpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "nx_weighted_flpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "nx_weighted_flpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "nx_weighted_flpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "nx_weighted_flpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_201",
+      "method": "nx_weighted_flpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "flpa_original",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "flpa_original",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "flpa_original",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "flpa_original",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "flpa_original",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "flpa_original",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "flpa_original",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "flpa_original",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "flpa_original",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "flpa_original",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c00_unit_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c00_unit_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c00_unit_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c00_unit_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c00_unit_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c00_unit_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c00_unit_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c00_unit_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c00_unit_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c00_unit_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c10_weighted_random",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c10_weighted_random",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c10_weighted_random",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c10_weighted_random",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c10_weighted_random",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c10_weighted_random",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c10_weighted_random",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c10_weighted_random",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c10_weighted_random",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c10_weighted_random",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c01_unit_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c01_unit_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c01_unit_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c01_unit_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c01_unit_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c01_unit_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c01_unit_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c01_unit_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c01_unit_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c01_unit_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c11_weighted_retain",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c11_weighted_retain",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c11_weighted_retain",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c11_weighted_retain",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c11_weighted_retain",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c11_weighted_retain",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c11_weighted_retain",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c11_weighted_retain",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c11_weighted_retain",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "c11_weighted_retain",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "asyn_lpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "asyn_lpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "asyn_lpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "asyn_lpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "asyn_lpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "asyn_lpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "asyn_lpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "asyn_lpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "asyn_lpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "asyn_lpa",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "leiden_modularity",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "leiden_modularity",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "leiden_modularity",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "leiden_modularity",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "leiden_modularity",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "leiden_modularity",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "leiden_modularity",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "leiden_modularity",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "leiden_modularity",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "leiden_modularity",
+      "seed": 9
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "nx_weighted_flpa",
+      "seed": 0
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "nx_weighted_flpa",
+      "seed": 1
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "nx_weighted_flpa",
+      "seed": 2
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "nx_weighted_flpa",
+      "seed": 3
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "nx_weighted_flpa",
+      "seed": 4
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "nx_weighted_flpa",
+      "seed": 5
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "nx_weighted_flpa",
+      "seed": 6
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "nx_weighted_flpa",
+      "seed": 7
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "nx_weighted_flpa",
+      "seed": 8
+    },
+    {
+      "dataset_id": "test_sbm_high_202",
+      "method": "nx_weighted_flpa",
+      "seed": 9
+    }
+  ]
+}

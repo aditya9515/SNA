@@ -1,0 +1,6 @@
+{
+  "objective": "standard modularity",
+  "resolution": 1,
+  "n_iterations": -1,
+  "support_violation_nodes": null
+}

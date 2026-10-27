@@ -1,0 +1,112 @@
+[
+  {
+    "id": "R01",
+    "method": "Queue-based asynchronous label propagation revisits nodes affected by label changes, with a local maximal-support condition at normal termination.",
+    "datasets": "Synthetic benchmark families and empirical networks, including Karate, Dolphins and Football.",
+    "metrics": "Partition quality and runtime; local support guarantee.",
+    "locator": "Algorithm 3; retention subsection; Results and empirical-network methods.",
+    "findings": "The authors report substantial speed benefits over repeated full scans. Our study reproduces the core update rule, not their largest-scale numerical speed claims.",
+    "advantage": "Simple queue bookkeeping reduces redundant visits.",
+    "limitation": "Local label maximality does not guarantee useful or globally optimal communities.",
+    "relationship": "Exact base method; already discusses retention, so retention is not an invented mechanism."
+  },
+  {
+    "id": "R02",
+    "method": "PR-LFM selects high-degree seeds, expands local-fitness communities, then uses PageRank to resolve overlapping assignments.",
+    "datasets": "Classic social graphs and router-network examples; inspect the source-specific versions before reproduction.",
+    "metrics": "NMI, modularity Q and runtime.",
+    "locator": "Methods, Eq. 7; Tables 2-5 and Figure 6.",
+    "findings": "The paper reports competitive community division with a local-expansion pipeline. Its router experiments do not establish performance on our prepared benchmark versions.",
+    "advantage": "Makes seed selection and overlap resolution explicit.",
+    "limitation": "Resolution choices and router-data access complicate like-for-like reproduction.",
+    "relationship": "A related local community method; our project keeps disjoint FLPA propagation rather than adopting PR-LFM."
+  },
+  {
+    "id": "R03",
+    "method": "Iterative embedding and reweighting alternates graph embeddings with geometry-derived edge-weight updates to separate communities.",
+    "datasets": "Planted-partition and LFR synthetic networks, with additional network examples.",
+    "metrics": "Element-centric similarity, NMI, detected community count and geometric separation.",
+    "locator": "Results; Figures 3-6; Methods and supplementary sensitivity discussions.",
+    "findings": "The authors show that reweighting can help conventional detectors recover planted structure. Weight interpretation depends on whether the embedding yields distances or proximities.",
+    "advantage": "Separates a reusable graph transformation from downstream community detection.",
+    "limitation": "Repeated embeddings cost more and introduce settings absent from our local feature rule.",
+    "relationship": "Important reweighting prior art; our weights are computed once from local neighbourhood overlap."
+  },
+  {
+    "id": "R04",
+    "method": "GATFELPA combines graph attention, enhanced label propagation, adaptive aggregation depth and a similarity-preservation mechanism.",
+    "datasets": "Cora, CiteSeer, PubMed and ogbn-arxiv attributed citation networks.",
+    "metrics": "Community/clustering agreement, robustness and computational comparisons in the paper's own setup.",
+    "locator": "Similarity preservation; Experimental analysis; ablation and parameter sections.",
+    "findings": "The article reports favourable performance across its attributed-graph experiments. Those training and input conditions differ from topology-only FLPA.",
+    "advantage": "Uses learned representations and local/global similarity information.",
+    "limitation": "Model training, attributes and multiple components prevent a fair direct comparison without matching their protocol.",
+    "relationship": "Shows that similarity-guided propagation is established; we do not claim to reproduce this neural model."
+  },
+  {
+    "id": "R05",
+    "method": "Embedding-based label propagation uses embedding similarities to weight neighbourhood label updates, mixing local connectivity with global representation.",
+    "datasets": "Social-network benchmarks including Karate, Dolphins and Polbooks, plus LFR synthetic cases.",
+    "metrics": "Modularity, community counts and partition-agreement measures reported in the article.",
+    "locator": "Eq. 8; Algorithm 1; Tables 1-6 and LFR benchmark discussion.",
+    "findings": "Reported tables compare the embedding-guided rule with other detectors. The paper's favourable findings are not a guarantee that our fixed local weighting will generalise.",
+    "advantage": "Allows nonlocal structural information to influence propagation.",
+    "limitation": "Embedding choices add a separate cost and selection budget; exact dataset/protocol alignment remains necessary.",
+    "relationship": "A close similarity-weighted propagation relative, with embeddings replacing our fixed Jaccard feature."
+  },
+  {
+    "id": "R06",
+    "method": "ORC-Nextrout uses dynamical optimal transport and Ollivier-Ricci geometry to control information flow between neighbourhoods.",
+    "datasets": "SBM and LFR synthetic benchmarks and real networks with node metadata.",
+    "metrics": "Adjusted Rand Index and comparisons across transport regimes.",
+    "locator": "Results on community detection problems; Figures 3 and 5; Table 1.",
+    "findings": "The authors show that transport settings change which structures can be recovered, with gains in parts of the tested regimes.",
+    "advantage": "Provides a geometric interpretation of intra-community edges and bottlenecks.",
+    "limitation": "Transport parameters and optimisation cost differ from lightweight propagation; best-setting results require attention to selection rules.",
+    "relationship": "Motivates sensitivity to structural regimes and explicit parameter selection, not a direct implemented comparator."
+  },
+  {
+    "id": "R07",
+    "method": "Clusters an ensemble of candidate network partitions into representative modes using an information-theoretic description of the solution set.",
+    "datasets": "Synthetic and empirical partition ensembles generated for the same underlying networks.",
+    "metrics": "Representativeness, partition description and diversity of competing community divisions.",
+    "locator": "Results and discussion; Figure 1; mode-finding and partition-transmission formulation.",
+    "findings": "The study explains why several plausible partitions can coexist and why a single optimum may hide important variation.",
+    "advantage": "Treats variability as information to inspect rather than automatically as an error.",
+    "limitation": "Requires an ensemble and answers a different question from producing a single propagation partition.",
+    "relationship": "Supports our multi-seed analysis and caution that repeatability alone is not correctness."
+  },
+  {
+    "id": "R08",
+    "method": "Analyses neural embeddings for community recovery, combining theoretical planted-model results with embedding and clustering experiments.",
+    "datasets": "Planted-partition/SBM, LFR and empirical networks including Football.",
+    "metrics": "Partition recovery and element-centric similarity across mixing and degree regimes.",
+    "locator": "Figures 1-3; Simulations: LFR benchmark; theoretical assumptions in Methods.",
+    "findings": "Certain shallow embedding methods can approach detectability limits under stated model assumptions, while sparse and unequal-community cases show important differences.",
+    "advantage": "Connects practical representation methods to an explicit recovery framework.",
+    "limitation": "Theoretical claims depend on model assumptions and do not certify arbitrary real networks or all embeddings.",
+    "relationship": "Motivates varying synthetic between-community connectivity and keeping global-representation claims outside our local method."
+  },
+  {
+    "id": "R09",
+    "method": "Local Search derives community centres and hierarchies from local dominance relationships between nodes rather than iterative modularity optimisation.",
+    "datasets": "Synthetic and empirical networks with reference labels, plus networks constructed from vector data.",
+    "metrics": "Recovery quality, hierarchical structure, robustness and computational behaviour.",
+    "locator": "Figures 1-3; Results; Methods and supplementary benchmark descriptions.",
+    "findings": "The reported experiments show that local dominance captures structure that can differ from a modularity partition.",
+    "advantage": "Uses a distinct local structural principle with interpretable centres.",
+    "limitation": "Community-centre interpretation is a different objective, so matching modularity alone is insufficient for judging it.",
+    "relationship": "Reinforces use of multiple metrics and the distinction between local structure and a global objective."
+  },
+  {
+    "id": "R10",
+    "method": "BD-LPA uses degree/betweenness-guided overlapping label propagation with pruning and refinement mechanisms.",
+    "datasets": "Karate, Polbooks, Football and twelve LFR synthetic datasets.",
+    "metrics": "Overlapping NMI, omega index, generalised F1, modularity and extended variation measures.",
+    "locator": "Section 3; Tables 1-6; pruning and refinement descriptions.",
+    "findings": "The authors report favourable overlapping-community results with configuration-dependent behaviour. This is a multi-membership problem, unlike our disjoint partitions.",
+    "advantage": "Makes node importance and stability-related pruning explicit.",
+    "limitation": "Overlapping metrics and tuning choices cannot be imported directly into a disjoint FLPA evaluation.",
+    "relationship": "Recent propagation/stability prior art; demonstrates that importance weighting and pruning are established directions."
+  }
+]

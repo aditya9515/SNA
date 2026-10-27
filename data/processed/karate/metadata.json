@@ -1,0 +1,24 @@
+{
+  "dataset_id": "karate",
+  "source_url": "https://networkx.org/documentation/stable/reference/generated/networkx.generators.social.karate_club_graph.html",
+  "graph_hash": "30665ac135b1fb52cbfda879e53d5f124c9bdbddd61c1b4775af4cf0de5a5b2d",
+  "nodes": 34,
+  "edges": 78,
+  "source_nodes": 34,
+  "source_edges": 78,
+  "source_directed": false,
+  "source_self_loops_removed": 0,
+  "connected_components": 1,
+  "isolates": 0,
+  "density": 0.13903743315508021,
+  "mean_degree": 4.588235294117647,
+  "max_degree": 17,
+  "reference_groups": 2,
+  "label_coverage": 1.0,
+  "policy": "Undirected OR-symmetrisation; deduplicate; remove loops; retain every source node; discard source weights for common topology",
+  "raw_sha256": {
+    "networkx_graph.json": "cc3ee4aa0ce32684b066ca56049ed5ade99dbd9ffae122ca6eb4d191ed6a1c8b"
+  },
+  "prepared_utc": "2026-10-26T14:35:57.610726+00:00",
+  "reference_label_source": "NetworkX club node attribute; source interaction weights excluded"
+}

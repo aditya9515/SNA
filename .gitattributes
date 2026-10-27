@@ -1,0 +1,2 @@
+# Preserve exact submitted bytes so CHECKSUMS.json remains valid on every OS.
+* -text
