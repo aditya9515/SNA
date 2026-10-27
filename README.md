@@ -17,8 +17,8 @@ DSE 4403 - Social Network Analysis | 26 October 2026
 
 - `Project_Report.pdf` - final report with the abstract, introduction, ten-paper review, design, experiments, measured results, limitations and references.
 - `Project_Report.md` - editable report source.
-- `SNA_Project_with_Results.ipynb` - executed notebook with live examples, result tables, embedded figures and independent metric checks.
-- `explaination.ipynb` - executed teaching companion: project overview, research versus contribution, all 21 original cells explained, imports/data paths and four extra demonstrations.
+- `SNA_Project_with_Results.ipynb` - complete implementation directly in 37 code cells: raw data, preprocessing, algorithms, 80 development runs, 1,040 final runs, evaluation and plot construction; executed successfully without the project package.
+- `explaination.ipynb` - detailed guide to the current complete-code notebook, explaining all 77 main cells and reproducing the same 37 code cells and their executed outputs.
 - `src/sna_project/`, `configs/`, `tests/`, `tools/` - full implementation and reproduction tools.
 - `data/` - source archives, prepared graphs, node maps and separate labels.
 - `results/` - development selection, final assignments/records, effective configurations, environments and summaries.
@@ -34,7 +34,7 @@ Open the PDF and notebook first. Their results are already saved; viewing them d
 - 80 development runs on four separate synthetic graphs; selected lambda **0.25**.
 - **1,040 final runs:** 320 real-network runs and 720 synthetic runs, with ten algorithm seeds per configuration.
 - **69 passing correctness checks**, including 50 exact comparisons of original FLPA with NetworkX.
-- An executed notebook that independently recomputes all final partition metrics.
+- Complete inline notebook executed with only that notebook in its working folder: 80 fresh development and 1,040 fresh final runs; every predicted partition matches the report evidence. It independently recomputes all final metrics.
 
 The findings are mixed. Weighting often improves small-graph repeatability, but quality varies and preparation costs increase. FLPA variants still form an unhelpful giant group on email and collapse in the hardest synthetic setting. These outcomes are reported. Weighting and tie retention are established ideas; global originality and universal superiority are not claimed.
 
@@ -53,12 +53,11 @@ The final synthetic study uses SBM rather than the optional LFR plan: four group
 
 ## Windows setup
 
-Use Python 3.12; the original environment used 3.12.15. From this folder:
+Use Python 3.12; the original environment used 3.12.15. The notebook imports only standard/third-party libraries, includes the four raw compressed dataset snapshots, and does not require `src/`, `configs/`, `data/` or old result files. From this folder:
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements-lock.txt
-.\.venv\Scripts\python.exe -m pip install -e .
 .\.venv\Scripts\python.exe -m pytest -q
 ```
 
@@ -72,16 +71,20 @@ Register the notebook kernel and open Jupyter:
 .\.venv\Scripts\python.exe -m notebook SNA_Project_with_Results.ipynb
 ```
 
-Choose the SNA Project kernel. Running all cells audits bundled results and runs live examples without replacing the official experiments. To rebuild and execute without a browser:
+Choose the SNA Project kernel and Run All. This performs the complete 80-run development selection and 1,040-run final study using functions written directly in the cells. It generates a fresh temporary output directory and an evidence ZIP, whose paths are printed. Saved outputs are already included.
+
+The PDF retains the original study's timing values. The new notebook is a fresh execution with identical graph/seed assignments; all 1,040 predictions were verified against the report evidence, while timings vary between runs. Its fresh evidence is also packaged in `results/notebook_execution/Notebook_Run_Evidence.zip`.
+
+To re-author the notebook from the equivalent package functions and execute it in an otherwise empty working folder:
 
 ```powershell
 .\.venv\Scripts\python.exe tools/build_notebook.py
 .\.venv\Scripts\python.exe tools/build_explanation.py
 ```
 
-## Reproduce all experiments separately
+## Optional equivalent package/CLI workflow
 
-Keep new experiments separate so final tables do not mix attempts. From this folder:
+The complete notebook is sufficient for the requested source-code submission. The equivalent package remains available for a command-line workflow. Install it with `.\.venv\Scripts\python.exe -m pip install -e .`, then keep new experiments separate so final tables do not mix attempts. From this folder:
 
 ```powershell
 $reproductionRoot = Join-Path (Get-Location) "reproduction"
@@ -95,7 +98,7 @@ $stressConfiguration = (Resolve-Path configs/stress.yaml).Path
 .\.venv\Scripts\python.exe -m sna_project plot --root $reproductionRoot
 ```
 
-First-time acquisition needs internet. Bundled data/results can be audited offline after dependency installation. Repeated calls create new attempt folders. Plotting rejects ambiguous duplicate final attempts; select/archive an attempt before combining repeated experiments.
+The inline notebook uses embedded raw snapshots and runs offline after installing dependencies. The optional CLI may need internet for missing source archives. Repeated CLI calls create new attempt folders; select/archive attempts before combining results. The notebook automatically uses a fresh output root.
 
 Regenerate the report from the current project's official results:
 
@@ -117,7 +120,7 @@ Regenerate the report from the current project's official results:
 | `contracts.py` | Shared objects, canonical labels, hashes and atomic JSON writes |
 | `cli.py` | Preparation, selection, execution, summary and plotting commands |
 
-These modules are in `src/sna_project/`. The package is independent of the notebook.
+These equivalent modules are in `src/sna_project/`. The complete notebook defines their computation directly in its own cells and imports none of them. `tools/build_full_notebook.py` assembles the literal code at authoring time; no source extraction, dynamic execution or project-file reading happens when the delivered notebook runs.
 
 ## Limits and provenance
 

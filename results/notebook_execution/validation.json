@@ -1,0 +1,24 @@
+{
+  "mode": "complete_inline_implementation",
+  "run_root": "C:\\Users\\Aditya\\AppData\\Local\\Temp\\sna_full_notebook_4kj0t4ij",
+  "development_runs": 80,
+  "final_runs": 1040,
+  "real_runs": 320,
+  "synthetic_runs": 720,
+  "successful_final_runs": 1040,
+  "independently_verified_partitions": 1040,
+  "baseline_parity_cases": 50,
+  "selected_lambda": 0.25,
+  "project_package_imported": false,
+  "embedded_raw_sources": 4,
+  "inline_implementation_sha256": "275ac02f915b6cb9c1e5ea21fd56e0816bbd0181a8b82a96875d8829f813aee8",
+  "status": "passed",
+  "evidence_zip_sha256": "3d138c82b6923453da77aa6077d0a8871c88662723a9c253f7e5c7e8b3a4c286",
+  "evidence_zip": "C:\\Users\\Aditya\\AppData\\Local\\Temp\\sna_full_notebook_4kj0t4ij\\Notebook_Run_Evidence.zip",
+  "standalone_execution_directory": "C:\\Users\\Aditya\\AppData\\Local\\Temp\\sna_notebook_only_0de3t_nq",
+  "initial_files_in_execution_directory": [
+    "SNA_Project_with_Results.ipynb"
+  ],
+  "partitions_matching_report_evidence": 1040,
+  "executed_code_cells": 37
+}

@@ -27,7 +27,7 @@ def package():
     for name in ["src", "configs", "tests", "tools", "data", "research"]:
         shutil.copytree(ROOT / name, target / name, ignore=ignore)
     (target / "results").mkdir()
-    for name in ["runs", "summaries", "development"]:
+    for name in ["runs", "summaries", "development", "notebook_execution"]:
         shutil.copytree(ROOT / "results" / name, target / "results" / name, ignore=ignore)
     shutil.copy2(ROOT / "results/parameter_selection.json", target / "results/parameter_selection.json")
     shutil.copytree(ROOT / "reports/figures", target / "reports/figures", ignore=ignore)

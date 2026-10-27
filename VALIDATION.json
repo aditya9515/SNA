@@ -6,12 +6,12 @@
   "development_runs": 80,
   "passing_correctness_tests": 69,
   "journal_papers": 10,
-  "executed_notebook_code_cells": 10,
+  "executed_notebook_code_cells": 37,
   "report_pages": 25,
   "abstract_words": 150,
   "scientific_source_sha256": "1cd87826d0fc1ce23dee479206a27179bd2dd069968722dc7d97a60ba4aa8df6",
   "status": "passed",
-  "notes": "Notebook independently recomputes all final partition metrics; rendered PDF reviewed separately; timings are measured and machine-dependent.",
+  "notes": "Complete inline notebook executed alone: fresh 80 development and 1040 final runs; all assignments match the report evidence; report retains original timings.",
   "report_style": {
     "font": "Times New Roman",
     "body_size_points": 12,
@@ -23,16 +23,38 @@
     "scientific_content_unchanged": true,
     "rendered_pages_reviewed": 25
   },
+  "standalone_notebook": {
+    "baseline_parity_cases": 50,
+    "development_runs": 80,
+    "embedded_raw_sources": 4,
+    "evidence_zip": "C:\\Users\\Aditya\\AppData\\Local\\Temp\\sna_full_notebook_4kj0t4ij\\Notebook_Run_Evidence.zip",
+    "evidence_zip_sha256": "3d138c82b6923453da77aa6077d0a8871c88662723a9c253f7e5c7e8b3a4c286",
+    "executed_code_cells": 37,
+    "final_runs": 1040,
+    "independently_verified_partitions": 1040,
+    "initial_files_in_execution_directory": [
+      "SNA_Project_with_Results.ipynb"
+    ],
+    "inline_implementation_sha256": "275ac02f915b6cb9c1e5ea21fd56e0816bbd0181a8b82a96875d8829f813aee8",
+    "mode": "complete_inline_implementation",
+    "partitions_matching_report_evidence": 1040,
+    "project_package_imported": false,
+    "real_runs": 320,
+    "run_root": "C:\\Users\\Aditya\\AppData\\Local\\Temp\\sna_full_notebook_4kj0t4ij",
+    "selected_lambda": 0.25,
+    "standalone_execution_directory": "C:\\Users\\Aditya\\AppData\\Local\\Temp\\sna_notebook_only_0de3t_nq",
+    "status": "passed",
+    "successful_final_runs": 1040,
+    "synthetic_runs": 720
+  },
   "explanation_notebook": {
     "path": "explaination.ipynb",
-    "original_cells_explained": 21,
-    "original_code_cells_reproduced_verbatim": 10,
-    "extra_demonstrations": 4,
-    "executed_code_cells": 14,
+    "original_cells_explained": 77,
+    "original_code_cells_reproduced_verbatim": 37,
+    "executed_code_cells": 37,
+    "execution_origin": "Exact outputs copied from matching executed main cells; no duplicate experiment rerun",
     "error_outputs": 0,
     "source_cell_mapping": "passed",
-    "source_notebook_sha256": "e05703e133a6743b33ae0a36c208ee7b1a3b81106c33535ad63967b09266e100",
-    "sha256": "ee69e484aeef8cb3ed348570ec71806b8b8db3059f2e04cc8793636c70216c2f",
     "status": "passed"
   }
 }

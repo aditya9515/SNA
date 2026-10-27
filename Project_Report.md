@@ -191,7 +191,7 @@ Neighbour-set preparation uses memory proportional to the sparse graph represent
 | tools/ | Acquire literature; build/execute notebook; generate the report and package. |
 | tests/ | Behavioural checks, exact reference parity, label alignment and data-integrity checks. |
 
-The package is deliberately independent of the notebook. The notebook imports the submitted implementation, reruns live examples and independently recomputes all final saved metrics. A run folder contains the assignment CSV, a record JSON and diagnostics, while the attempt folder stores the frozen effective configuration, environment and expected-run manifest. Failures are preserved. Graph hashes include the full node universe, so isolates cannot disappear through an edge-list export.
+The notebook contains the complete implementation directly in cells: data preparation, algorithms, parameter selection, experiments, evaluation, aggregation and plotting. It embeds raw dataset snapshots and imports no project module. The equivalent package provides a CLI alternative. Run folders contain assignments, records and diagnostics; attempt folders store configuration, environment and manifests. Failures and isolates are preserved.
 
 <!-- pagebreak -->
 
@@ -417,7 +417,7 @@ At medium between-block connectivity, B0 has mean ARI 0.488, C11 reaches 0.873, 
 
 The correctness suite has 69 passing checks. Fifty exact parity cases compare B0 with NetworkX across path, cycle, complete, star and Karate graphs over ten seeds. Other checks cover lambda-zero controls, structural weights on a hand-calculated triangle/bridge example, repeatability, final support invariants, cap reporting, isolates, empty graphs, label/ID alignment, corrupted graph hashes, comparison-backend conversion, metric invariance and stability-pair counts. A graph-copy ordering defect was found during development and corrected before the final frozen experiment.
 
-All 1,040 expected final runs are present: 320 real and 720 synthetic. The 80 development-selection runs are saved separately and excluded from those final tables. No final run failed or reached an instrumented limit. The executed notebook reopens every final partition and independently recomputes ARI/NMI, modularity and community-size diagnostics, asserting agreement with the stored metrics. This verifies that report values are derived from the same saved runs as the notebook figures. Technical timing values are not expected to reproduce bit-for-bit on another machine.
+All 1,040 expected final runs are present: 320 real and 720 synthetic. The 80 development runs are saved separately. No final run failed or reached an instrumented limit. The complete inline notebook was also executed in a folder containing only that notebook. It freshly computed 80 development and 1,040 final runs, then independently recomputed all final partition metrics. All 1,040 predictions matched this report's evidence. The notebook records fresh timings; this report retains the original measured durations, which vary between executions.
 
 ## 9.2 Reproduction workflow
 
@@ -433,7 +433,7 @@ python -m sna_project summarize
 python -m sna_project plot
 ```
 
-The README gives exact Windows commands, kernel setup and instructions to keep a new run separate from the bundled final evidence. The executed notebook is SNA_Project_with_Results.ipynb. It contains live algorithm examples, all final result tables/plots and independent metric checks. Full source, pinned dependencies, configurations, raw/processed data, literature and run records accompany it. Only one team member should upload the folder; Aditya Kosuru is first in the supplied team order.
+The README gives setup and reproduction instructions. SNA_Project_with_Results.ipynb contains the full code step by step, embedded source datasets, executed experiments, plots and metric checks. Run All needs only that notebook and installed external libraries; it creates a fresh output directory. explaination.ipynb explains the same code and data flow. Equivalent package source, dependencies, literature and run evidence accompany them. Only Aditya Kosuru, first in the supplied team order, should upload the folder.
 
 ## 9.3 Practical and scientific limits
 
