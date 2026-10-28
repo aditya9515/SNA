@@ -488,25 +488,3 @@ Future work should study more independent networks, alternative local structural
 [D4] scikit-learn documentation. Adjusted Rand Index and Normalized Mutual Information. https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation
 
 [D5] leidenalg documentation. ModularityVertexPartition and seeded find_partition. https://leidenalg.readthedocs.io/en/latest/reference.html
-
-# Appendix A. Submitted artifacts and requirement coverage
-
-| Requirement | Submitted evidence |
-| --- | --- |
-| Project report | Project_Report.pdf and editable Project_Report.md |
-| Source notebook with results | SNA_Project_with_Results.ipynb: executed cells, tables, embedded figures and metric audit |
-| Source implementation | src/sna_project, configs, tests and tools |
-| Team information | Three members and registration numbers on the cover and in TEAM_DETAILS.json |
-| Base and proposed titles | Cover, introduction and methodology |
-| 150-word abstract; introduction | Abstract and Section 1 |
-| Base/team contributions; distinction | Section 1.1 and literature synthesis |
-| Ten recent journal papers | Section 2, references, full texts and literature_review.csv |
-| Flow, modules, equations | Sections 3-4 and architecture/weight figures |
-| Parameters, tools and environment | Section 5; saved effective configs, selection record and lock file |
-| At least three datasets | Four real datasets, three with reference labels, plus nine synthetic test graphs |
-| At least two comparison works | Asynchronous LPA [R11] and Leiden [R12] on all final graphs |
-| Multiple metrics and result tables/plots | Sections 6-8; summary CSVs and figures |
-| Conclusion, limitations and future work | Sections 9-10 |
-| One-member upload | README and TEAM_DETAILS.json designate first-listed Aditya Kosuru |
-
-The latest submission instruction is to upload one folder containing the report and source code, including an executed notebook with results. This package follows that instruction and the detailed requirement list recovered in the earlier project guide. No upload to an external portal is performed by the build scripts.
